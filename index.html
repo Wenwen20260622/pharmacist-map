@@ -183,13 +183,17 @@ body{
 .ref-link{color:var(--blue-d);text-decoration:underline;word-break:break-all;font-size:13px}
 
 /* ---- student page ---- */
-.student-page{max-width:640px;margin:0 auto}
+.student-page{max-width:640px;margin:0 auto;position:relative;z-index:1}
+.role-bg-layer{position:fixed;inset:0;z-index:0;background-position:center;background-size:cover;
+  background-repeat:no-repeat;opacity:.16;pointer-events:none}
+.role-bg-layer:after{content:"";position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(243,234,216,.45),rgba(243,234,216,.82))}
 .stu-hero{background:linear-gradient(120deg,var(--blue),var(--blue-d));color:#fff;
   border-radius:22px;padding:22px 24px;box-shadow:var(--shadow);margin-bottom:18px;position:relative;overflow:hidden}
 .stu-hero .code{font-family:"Fredoka",sans-serif;font-weight:700;opacity:.9}
 .stu-hero h1{margin:4px 0 0;font-size:26px;font-weight:900}
 .stu-hero .starline{margin-top:8px;color:var(--gold);font-size:18px;letter-spacing:2px}
-.stu-card{background:var(--panel-solid);border-radius:18px;box-shadow:var(--shadow);
+.stu-card{background:rgba(255,253,248,.9);backdrop-filter:blur(4px);border-radius:18px;box-shadow:var(--shadow);
   border:2px solid #fff;padding:22px}
 
 /* ---- teacher backstage ---- */
@@ -1054,6 +1058,7 @@ function renderStudent(type,id){
     const r=findRole(id);
     if(!r){ wrap.innerHTML="<div class='empty'>找不到這張角色卡。</div>"; return; }
     wrap.innerHTML=`<div class="student-page">
+      ${r.img?`<div class="role-bg-layer" style="background-image:url('${r.img}')"></div>`:""}
       <div class="stu-hero"><div class="code eng">${esc(r.en||"ROLE")}</div><h1>${esc(r.name)}</h1></div>
       <div class="stu-card">
         <div class="field"><div class="k">你的職責</div><div class="v">${esc(r.duty)}</div></div>
