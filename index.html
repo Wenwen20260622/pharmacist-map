@@ -162,6 +162,13 @@ body{
 .card-pop-head .close{margin-left:auto;background:rgba(255,255,255,.25);border:none;color:#fff;
   width:34px;height:34px;border-radius:10px;font-size:20px;cursor:pointer;line-height:1}
 .card-pop-body{padding:22px;display:grid;grid-template-columns:1.3fr .9fr;gap:22px}
+.card-pop-body.single{display:block}
+.qr-top{display:flex;justify-content:center;margin-bottom:16px}
+.qr-top .qr-box{max-width:280px;width:100%}
+.tbl-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;border-radius:10px}
+.itable td:first-child{word-break:break-word;min-width:180px}
+.itable td:last-child{min-width:150px}
+.dc-val{word-break:break-word}
 @media(max-width:640px){.card-pop-body{grid-template-columns:1fr}}
 .card-img{width:100%;border-radius:16px;box-shadow:var(--shadow);display:block}
 .field{margin-bottom:14px}
@@ -1018,7 +1025,7 @@ function renderInteractions(c){
     <td class="sev ${(i.sev||'').toLowerCase()}">${esc(i.sev)}</td>
     <td>${esc(i.doc||'')}</td><td>${esc(i.summary||'')}</td></tr>`).join("");
   return `<div class="drug-sec"><div class="head">🔬 藥物交互作用</div>
-    <table class="itable"><tr><th>藥物</th><th>嚴重性</th><th>文件</th><th>綜述</th></tr>${rows}</table></div>`;
+    <div class="tbl-scroll"><table class="itable"><tr><th>藥物</th><th>嚴重性</th><th>文件</th><th>綜述</th></tr>${rows}</table></div></div>`;
 }
 
 function popCase(c){
@@ -1029,19 +1036,17 @@ function popCase(c){
       <div><div class="code eng">${esc(c.code)} · ${esc(starTxt)}</div><h3>${esc(c.title)}</h3></div>
       <button class="close" onclick="closePop()">×</button>
     </div>
-    <div class="card-pop-body">
-      <div>
-        <div class="field"><div class="k">病人資訊</div><div class="v">${esc(s.patient)}</div></div>
-        <div class="field"><div class="k">初始情境</div><div class="v">${esc(s.context)}</div></div>
-        <div class="field"><div class="k">醫師處方</div><div class="v">${esc(s.rx)}</div></div>
-        ${renderInteractions(c)}
-        ${renderDrugInfo(c)}
-        ${s.evidence?`<details class="collap"><summary>臨床實證參考</summary><div class="inner">${esc(s.evidence)}</div></details>`:""}
-        ${(s.refs&&s.refs.length)?`<details class="collap"><summary>延伸文獻</summary><div class="inner">${s.refs.map(r=>`<a class="ref-link" href="${r.url}" target="_blank">${esc(r.title)}</a>`).join("<br>")}</div></details>`:""}
-      </div>
-      <div>
+    <div class="card-pop-body single">
+      <div class="qr-top">
         <div class="qr-box"><div id="qrCase"></div><div class="lbl">學生掃描看完整情境</div></div>
       </div>
+      <div class="field"><div class="k">病人資訊</div><div class="v">${esc(s.patient)}</div></div>
+      <div class="field"><div class="k">初始情境</div><div class="v">${esc(s.context)}</div></div>
+      <div class="field"><div class="k">醫師處方</div><div class="v">${esc(s.rx)}</div></div>
+      ${renderInteractions(c)}
+      ${renderDrugInfo(c)}
+      ${s.evidence?`<details class="collap"><summary>臨床實證參考</summary><div class="inner">${esc(s.evidence)}</div></details>`:""}
+      ${(s.refs&&s.refs.length)?`<details class="collap"><summary>延伸文獻</summary><div class="inner">${s.refs.map(r=>`<a class="ref-link" href="${r.url}" target="_blank">${esc(r.title)}</a>`).join("<br>")}</div></details>`:""}
     </div>`;
   openPop(); qrInto(document.getElementById("qrCase"), studentUrl("case",c.id));
 }
