@@ -250,9 +250,11 @@ body{
 .checkgrid{max-height:220px;overflow:auto;border:2px solid var(--line);border-radius:12px;
   padding:10px 12px;background:#fff;display:grid;gap:6px}
 .checkgrid.cols{grid-template-columns:1fr 1fr}
-.checkgrid label{display:flex;align-items:center;gap:8px;font-weight:500;color:var(--ink);
-  margin:0;font-size:14px;cursor:pointer}
-.checkgrid input{width:auto}
+.checkgrid label{display:flex;align-items:flex-start;gap:8px;font-weight:500;color:var(--ink);
+  margin:0;font-size:14px;cursor:pointer;line-height:1.5}
+.checkgrid label input[type="checkbox"]{width:16px;height:16px;flex:0 0 16px;margin-top:2px}
+.checkgrid .lbl-txt{flex:1;min-width:0;word-break:break-word}
+.checkgrid .lbl-en{color:var(--ink-soft);font-size:12px}
 .drug-db-item{display:flex;gap:10px;align-items:center;background:#fff;border:2px solid var(--line);
   border-radius:12px;padding:9px 14px;margin-bottom:7px;font-size:14px}
 .drug-db-item .dn{font-weight:700}.drug-db-item .de{color:var(--ink-soft);font-family:"Fredoka",sans-serif;font-size:12px}
@@ -1240,7 +1242,7 @@ function edCaseForm(c){
       const key=d["藥品學名"]||d.id;
       const on=(s.drugInfo&&s.drugInfo.drugs||[]).includes(key);
       const sTxt=esc((d["中文名稱"]||"")+" "+(d["藥品學名"]||""));
-      return `<label data-s="${sTxt}"><input type="checkbox" value="${esc(key)}" ${on?"checked":""}> ${esc(d["中文名稱"]||"")} <span style="color:var(--ink-soft);font-size:12px">${esc(d["藥品學名"]||"")}</span></label>`;
+      return `<label data-s="${sTxt}"><input type="checkbox" value="${esc(key)}" ${on?"checked":""}><span class="lbl-txt">${esc(d["中文名稱"]||"")} <span class="lbl-en">${esc(d["藥品學名"]||"")}</span></span></label>`;
     }).join("")||'<span style="color:var(--ink-soft)">尚無藥品，請先到「藥品資料庫」匯入 Excel。</span>'}</div>
     <label>這題要聚焦顯示哪些欄位（可複選，只勾這題想強調的）</label>
     <div class="checkgrid cols" id="fieldPick">${(DATA.fields||[]).map(f=>{
