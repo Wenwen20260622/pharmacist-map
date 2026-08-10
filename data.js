@@ -21938,6 +21938,57 @@ window.GAME_DATA = {
           "若成功提出 Pantoprazole 的精確替代方案，因藥價可能微幅變動，扣除紅籌碼（藥費）2 枚。"
         ]
       }
+    },
+    {
+      "id": "case-1786345086314",
+      "code": "CASE-003",
+      "title": "葡萄柚危機",
+      "star": 1,
+      "student": {
+        "patient": "陳小姐，55 歲。因高膽固醇血症，目前規律服用降血脂藥物控制病情。",
+        "context": "陳小姐回診領藥時，提到最近朋友送了一大箱進口葡萄柚，詢問可不可以榨汁每天喝。",
+        "rx": "Atorvastatin 20mg 1tab QD",
+        "evidence": "",
+        "refs": [
+          {
+            "title": "CYP3A4和CYP2D6影響的藥品",
+            "url": "https://drive.google.com/file/d/1MJYYd9W4vlpx0cejat3BsDxFk9Wynb3d/view?usp=drive_link"
+          }
+        ],
+        "drugInfo": {
+          "drugs": [
+            "AtorvaStatin 20mg/Tab",
+            "Pitavastatin(友霖) calcium 四mg/Tab",
+            "Pitavastatin(台田) 2mg/Tab",
+            "Rosuvastatin 10mg/Tab"
+          ],
+          "fields": [
+            "藥品學名",
+            "中文名稱",
+            "商品名稱",
+            "成分及含量",
+            "藥品手冊適應症",
+            "成人常用劑量說明",
+            "貯藏方式",
+            "用藥方法",
+            "特別用藥指示",
+            "健保價格",
+            "自費價"
+          ]
+        }
+      },
+      "interactions": [],
+      "teacher": {
+        "review": "實習生必須抓出 Atorvastatin 在體內主要是經由腸道與肝臟的 CYP3A4 酵素代謝 。",
+        "risk": "葡萄柚汁含有強烈抑制 CYP3A4 酵素的成分。若併服會抑制 Atorvastatin 的代謝，使藥物血中濃度大幅增加，極易引發肌肉毒性，嚴重甚至導致橫紋肌溶解症 (rhabdomyolysis) 或急性腎衰竭 。",
+        "planB": "1. 基礎解法： 衛教病人服藥期間「絕對禁止」食用葡萄柚或葡萄柚汁。\n2. 進階解法： 若病人非常堅持想吃，建議醫師將降血脂藥物更改為幾乎不經由 CYP3A4 代謝的品項，例如 Rosuvastatin 或 Pravastatin。",
+        "chips": [
+          "-若藥師未發現而照發藥品且未衛教，病人一週後因全身肌肉劇痛掛急診，扣除綠籌碼（健康度）5 枚。",
+          "-若藥師成功攔截並衛教病人禁食葡萄柚，不扣額外籌碼。",
+          "-若藥師建議「更換不受影響的 Statins」，展現極高專業度，獎勵綠籌碼（健康度）1 枚（病人滿意度提升）。但因變更藥品，藥價可能微幅變動，扣除紅籌碼（藥費）1 枚。",
+          "- 難點解析：國考必考的經典 CYP3A4 食物交互作用。重點在於測驗藥師「有沒有記得開口做衛教」。"
+        ]
+      }
     }
   ]
 };
