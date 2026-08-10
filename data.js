@@ -1,4 +1,3 @@
-
 window.GAME_DATA = {
   "config": {
     "title": "醫藥先鋒：藥師任務地圖",
@@ -21888,17 +21887,25 @@ window.GAME_DATA = {
           }
         ],
         "drugInfo": {
-          "fields": [
-            "中文適應症",
-            "成人常用劑量說明",
-            "用藥方法",
-            "禁忌症",
-            "貯藏方式"
-          ],
           "drugs": [
-            "Esomeprazole(錠劑) 40mg/Tab",
             "Pantoprazole 40mg/Vial",
-            "Famotidine  20mg/Tab"
+            "Dexlansoprazole 60mg/Cap",
+            "Esomeprazole(錠劑) 40mg/Tab",
+            "Famotidine  20mg/Tab",
+            "Lansoprazole 30mg/Tab(口溶錠)",
+            "Rabeprazole 20mg/Tab"
+          ],
+          "fields": [
+            "藥品學名",
+            "中文名稱",
+            "商品名稱",
+            "成分及含量",
+            "藥品手冊適應症",
+            "成人常用劑量說明",
+            "貯藏方式",
+            "用藥方法",
+            "健保價格",
+            "自費價"
           ]
         }
       },
