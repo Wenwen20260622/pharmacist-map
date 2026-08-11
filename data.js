@@ -21888,12 +21888,18 @@ window.GAME_DATA = {
         ],
         "drugInfo": {
           "drugs": [
+            "Famotidine 20mg/2mL/Amp",
             "Pantoprazole 40mg/Vial",
+            "Alginos oral susp.(複方) 210mL/Bot",
             "Dexlansoprazole 60mg/Cap",
+            "Dibismuth Trioxide 120mg/Tab",
             "Esomeprazole(錠劑) 40mg/Tab",
             "Famotidine  20mg/Tab",
             "Lansoprazole 30mg/Tab(口溶錠)",
-            "Rabeprazole 20mg/Tab"
+            "Misoprostol 200mcg/Tab",
+            "Rabeprazole 20mg/Tab",
+            "Sucralfate  500mg/Tab",
+            "Topaal(Algitab) chewable Tab(複方)"
           ],
           "fields": [
             "商品名稱",
