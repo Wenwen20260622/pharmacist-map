@@ -1019,13 +1019,23 @@ function dcSwitch(btn){
   box.querySelectorAll(".dc-tab").forEach(b=>b.classList.toggle("on", b===btn));
   box.querySelectorAll(".dc-cell").forEach(c=>{ c.style.display=(c.dataset.f===f)?"block":"none"; });
 }
+function patientBlock(s){
+  const txt=[s.patient,s.context].filter(Boolean).join("\n");
+  return `<div class="field"><div class="k">病人資訊</div><div class="v">${esc(txt).replace(/\n/g,"<br>")}</div></div>`;
+}
 function renderInteractions(c){
-  if(!c.interactions||!c.interactions.length) return "";
-  const rows=c.interactions.map(i=>`<tr><td>${esc(i.drugs)}</td>
-    <td class="sev ${(i.sev||'').toLowerCase()}">${esc(i.sev)}</td>
-    <td>${esc(i.doc||'')}</td><td>${esc(i.summary||'')}</td></tr>`).join("");
-  return `<div class="drug-sec"><div class="head">🔬 藥物交互作用</div>
-    <div class="tbl-scroll"><table class="itable"><tr><th>藥物</th><th>嚴重性</th><th>文件</th><th>綜述</th></tr>${rows}</table></div></div>`;
+  const hasTbl=c.interactions&&c.interactions.length;
+  const hasImg=c.interactionImage;
+  if(!hasTbl&&!hasImg) return "";
+  let inner="";
+  if(hasTbl){
+    const rows=c.interactions.map(i=>`<tr><td>${esc(i.drugs)}</td>
+      <td class="sev ${(i.sev||'').toLowerCase()}">${esc(i.sev)}</td>
+      <td>${esc(i.doc||'')}</td><td>${esc(i.summary||'')}</td></tr>`).join("");
+    inner+=`<div class="tbl-scroll"><table class="itable"><tr><th>藥物</th><th>嚴重性</th><th>文件</th><th>綜述</th></tr>${rows}</table></div>`;
+  }
+  if(hasImg){ inner+=`<img src="${c.interactionImage}" alt="藥物交互作用" style="max-width:100%;border-radius:10px;margin-top:8px;box-shadow:var(--shadow)">`; }
+  return `<div class="drug-sec"><div class="head">🔬 藥物交互作用</div>${inner}</div>`;
 }
 
 function popCase(c){
@@ -1040,13 +1050,12 @@ function popCase(c){
       <div class="qr-top">
         <div class="qr-box"><div id="qrCase"></div><div class="lbl">學生掃描看完整情境</div></div>
       </div>
-      <div class="field"><div class="k">病人資訊</div><div class="v">${esc(s.patient)}</div></div>
-      <div class="field"><div class="k">初始情境</div><div class="v">${esc(s.context)}</div></div>
+      ${patientBlock(s)}
       <div class="field"><div class="k">醫師處方</div><div class="v">${esc(s.rx)}</div></div>
       ${renderInteractions(c)}
-      ${renderDrugInfo(c)}
       ${s.evidence?`<details class="collap"><summary>臨床實證參考</summary><div class="inner">${esc(s.evidence)}</div></details>`:""}
       ${(s.refs&&s.refs.length)?`<details class="collap"><summary>延伸文獻</summary><div class="inner">${s.refs.map(r=>`<a class="ref-link" href="${r.url}" target="_blank">${esc(r.title)}</a>`).join("<br>")}</div></details>`:""}
+      ${renderDrugInfo(c)}
     </div>`;
   openPop(); qrInto(document.getElementById("qrCase"), studentUrl("case",c.id));
 }
@@ -1077,16 +1086,14 @@ function renderStudent(type,id){
   if(!c){ wrap.innerHTML="<div class='empty'>找不到這張狀況卡。</div>"; return; }
   const s=c.student;
   wrap.innerHTML=`<div class="student-page">
-    <div class="stu-hero"><div class="code eng">${esc(c.code)}</div><h1>${esc(c.title)}</h1>
-      <div class="starline">${starLine(c.star)}</div></div>
+    <div class="stu-hero"><div class="code eng">${esc(c.code)} <span style="color:var(--gold)">${esc(starLine(c.star))}</span></div></div>
     <div class="stu-card">
-      <div class="field"><div class="k">病人資訊</div><div class="v">${esc(s.patient)}</div></div>
-      <div class="field"><div class="k">初始情境</div><div class="v">${esc(s.context)}</div></div>
+      ${patientBlock(s)}
       <div class="field"><div class="k">醫師處方</div><div class="v">${esc(s.rx)}</div></div>
       ${renderInteractions(c)}
-      ${renderDrugInfo(c)}
       ${s.evidence?`<details class="collap"><summary>臨床實證參考</summary><div class="inner">${esc(s.evidence)}</div></details>`:""}
       ${(s.refs&&s.refs.length)?`<details class="collap"><summary>延伸文獻</summary><div class="inner">${s.refs.map(r=>`<a class="ref-link" href="${r.url}" target="_blank">${esc(r.title)}</a>`).join("<br>")}</div></details>`:""}
+      ${renderDrugInfo(c)}
     </div></div>`;
 }
 
@@ -1141,12 +1148,10 @@ function teacherCase(id){
     <div class="panel">
       <div class="card-pop-head" style="border-radius:14px;margin:-6px -6px 18px">
         <div><div class="code eng">${esc(c.code)} · ${esc(STAR_LABELS[c.star])}</div><h3>${esc(c.title)}</h3></div></div>
-      <div class="field"><div class="k">病人資訊</div><div class="v">${esc(s.patient)}</div></div>
-      <div class="field"><div class="k">初始情境</div><div class="v">${esc(s.context)}</div></div>
+      ${patientBlock(s)}
       <div class="field"><div class="k">醫師處方</div><div class="v">${esc(s.rx)}</div></div>
 
       ${renderInteractions(c)}
-      ${renderDrugInfo(c)}
 
       <div class="tbox">
         <div class="th">💊 藥師介入點（關鍵陷阱・學生看不到）</div>
@@ -1161,6 +1166,8 @@ function teacherCase(id){
       </div>
 
       ${s.evidence?`<details class="collap"><summary>臨床實證參考（學生也看得到）</summary><div class="inner">${esc(s.evidence)}</div></details>`:""}
+      ${(s.refs&&s.refs.length)?`<details class="collap"><summary>延伸文獻（學生也看得到）</summary><div class="inner">${s.refs.map(r=>`<a class="ref-link" href="${r.url}" target="_blank">${esc(r.title||r.url)}</a>`).join("<br>")}</div></details>`:""}
+      ${renderDrugInfo(c)}
     </div>`;
   window.scrollTo(0,0);
 }
@@ -1243,9 +1250,11 @@ function edCaseForm(c){
     </div>
     ${edField("標題",c.title)}
     <div class="tb-section-title" style="font-size:15px;margin-top:18px"><span class="bar"></span>學生看得到</div>
-    ${edField("病人資訊",s.patient,1)}
-    ${edField("初始情境",s.context,1)}
+    ${edField("病人資訊與情境",[s.patient,s.context].filter(Boolean).join("\n"),1)}
     ${edField("醫師處方",s.rx,1)}
+    <label>藥物交互作用圖片（可上傳截圖，選填）</label>
+    <input type="file" accept="image/*" id="f_interimg" onchange="edInterImg(event)">
+    <div id="interPrev" style="margin-top:8px">${c.interactionImage?`<img src="${c.interactionImage}" style="max-width:240px;border-radius:10px">`:""}</div>
     <label>院內藥品資訊：這題要掛哪幾支藥（可複選）</label>
     <input type="text" placeholder="🔍 輸入藥名或學名搜尋（例如 esome、耐適恩）" oninput="drugFilter(this.value)" style="margin-bottom:8px">
     <div class="checkgrid" id="drugPick">${(DATA.drugs||[]).map(d=>{
@@ -1262,8 +1271,9 @@ function edCaseForm(c){
       return `<label><input type="checkbox" value="${esc(f)}" ${on?"checked":""}> ${esc(f)}</label>`;
     }).join("")}</div>
     ${edField("臨床實證參考",s.evidence,1)}
-    ${edField("延伸文獻標題",(s.refs&&s.refs[0])?s.refs[0].title:"")}
-    ${edField("延伸文獻連結",(s.refs&&s.refs[0])?s.refs[0].url:"")}
+    <label>延伸文獻（可新增多組標題與連結）</label>
+    <div id="refList">${(s.refs||[]).map(r=>refRow(r.title,r.url)).join("")}</div>
+    <button type="button" class="btn-ghost" onclick="addRefRow()" style="margin-top:4px">＋ 新增文獻</button>
     <div class="tb-section-title" style="font-size:15px;margin-top:18px;color:var(--red-d)"><span class="bar" style="background:var(--red)"></span>只有老師看得到</div>
     ${edField("專業審核",t.review,1)}
     ${edField("風險警告",t.risk,1)}
@@ -1274,6 +1284,20 @@ function edCaseForm(c){
       <button class="btn-ghost" onclick="renderEditor()">取消</button>
     </div>
    </div>`;
+  edCaseForm._interImg=c.interactionImage||"";
+}
+function refRow(t,u){
+  return `<div class="ref-row" style="display:flex;gap:8px;margin-bottom:8px;align-items:center">
+    <input class="ref-t" placeholder="文獻標題" value="${esc(t||"")}" style="flex:1">
+    <input class="ref-u" placeholder="連結網址" value="${esc(u||"")}" style="flex:1.4">
+    <button type="button" class="btn-del" onclick="this.parentNode.remove()">✕</button></div>`;
+}
+function addRefRow(){ document.getElementById("refList").insertAdjacentHTML("beforeend", refRow("","")); }
+function edInterImg(e){
+  const f=e.target.files[0]; if(!f) return;
+  const rd=new FileReader(); rd.onload=()=>{ edCaseForm._interImg=rd.result;
+    document.getElementById("interPrev").innerHTML=`<img src="${rd.result}" style="max-width:240px;border-radius:10px">`; };
+  rd.readAsDataURL(f);
 }
 function gv(l){ const el=document.getElementById("f_"+l); return el?el.value.trim():""; }
 function pickVals(boxId){ return [...document.querySelectorAll("#"+boxId+" input:checked")].map(x=>x.value); }
@@ -1286,13 +1310,17 @@ function drugFilter(q){
 }
 function edSaveCase(id){
   const prev=findCase(id);
+  const refs=[...document.querySelectorAll("#refList .ref-row")].map(r=>({
+    title:r.querySelector(".ref-t").value.trim(), url:r.querySelector(".ref-u").value.trim()
+  })).filter(x=>x.url);
   const obj={
     id:id||("case-"+Date.now()), code:gv("卡號")||"CASE", title:gv("標題")||"未命名",
     star:(function(v){return v==="special"?"special":Number(v);})(document.getElementById("f_star").value),
-    student:{ patient:gv("病人資訊"),context:gv("初始情境"),rx:gv("醫師處方"),evidence:gv("臨床實證參考"),
-      refs: gv("延伸文獻連結")?[{title:gv("延伸文獻標題")||gv("延伸文獻連結"),url:gv("延伸文獻連結")}]:[],
+    student:{ patient:gv("病人資訊與情境"),context:"",rx:gv("醫師處方"),evidence:gv("臨床實證參考"),
+      refs: refs,
       drugInfo:{ drugs:pickVals("drugPick"), fields:pickVals("fieldPick") } },
     interactions:(prev&&prev.interactions)||[],
+    interactionImage: edCaseForm._interImg || (prev&&prev.interactionImage) || "",
     teacher:{ review:gv("專業審核"),risk:gv("風險警告"),planB:gv("替代建議 B計畫"),
       chips: gv("籌碼操作（每行一條）").split("\n").map(x=>x.trim()).filter(Boolean) }
   };
