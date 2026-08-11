@@ -1337,7 +1337,7 @@ function edSaveCase(id){
       drugs:r.querySelector(".ir-d").value.trim(), sev:r.querySelector(".ir-s").value.trim(),
       doc:r.querySelector(".ir-doc").value.trim(), summary:r.querySelector(".ir-sum").value.trim()
     })).filter(x=>x.drugs),
-    interactionImage: edCaseForm._interImg || (prev&&prev.interactionImage) || "",
+    interactionImage: edCaseForm._interImg || "",
     teacher:{ review:gv("專業審核"),risk:gv("風險警告"),planB:gv("替代建議 B計畫"),
       chips: gv("籌碼操作（每行一條）").split("\n").map(x=>x.trim()).filter(Boolean) }
   };
