@@ -21896,8 +21896,6 @@ window.GAME_DATA = {
             "Rabeprazole 20mg/Tab"
           ],
           "fields": [
-            "藥品學名",
-            "中文名稱",
             "商品名稱",
             "成分及含量",
             "藥品手冊適應症",
@@ -21963,8 +21961,6 @@ window.GAME_DATA = {
             "Rosuvastatin 10mg/Tab"
           ],
           "fields": [
-            "藥品學名",
-            "中文名稱",
             "商品名稱",
             "成分及含量",
             "藥品手冊適應症",
@@ -22016,8 +22012,6 @@ window.GAME_DATA = {
             "MethylPhenidate ER 36mg/Tab"
           ],
           "fields": [
-            "藥品學名",
-            "中文名稱",
             "商品名稱",
             "成分及含量",
             "藥品手冊適應症",
