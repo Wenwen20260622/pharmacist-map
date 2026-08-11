@@ -21876,9 +21876,9 @@ window.GAME_DATA = {
       "title": "心臟支架的隱形殺手",
       "star": 1,
       "student": {
-        "patient": "魯先生，曾發生心肌梗塞並放置冠狀動脈支架，目前規律服用 Clopidogrel（保栓通）預防再次發病。",
-        "context": "病人近期抱怨胸口灼熱、胃酸逆流，醫師診斷為胃食道逆流（GERD）。",
-        "rx": "醫師開立氫離子幫浦抑制劑 Esomeprazole（Nexium；耐適恩）40mg 來抑制胃酸。",
+        "patient": "魯先生，曾發生心肌梗塞並放置冠狀動脈支架，目前規律服用 Clopidogrel 預防再次發病。\n病人近期抱怨胸口灼熱、胃酸逆流，醫師診斷為胃食道逆流（GERD）。",
+        "context": "",
+        "rx": "Esomeprazole 40mg/Tab 1Tab QD",
         "evidence": "PPI 與 clopidogrel 的交互作用具臨床意義：clopidogrel 是前驅藥，主要經 CYP2C19 活化；而 omeprazole、esomeprazole 等會強力抑制此酵素，可能降低 clopidogrel 的抗血小板效果，增加心肌梗塞、缺血性中風等心血管事件風險。相關指引建議：對有腸胃道出血高風險、又在使用雙重抗血小板治療的病人可用 PPI 保護腸胃，但應避免強力抑制 CYP2C19 的 PPI（如 omeprazole）。pantoprazole 因對 CYP2C19 抑制極小、與 clopidogrel 無明顯臨床交互作用而為首選。近期統合分析與隨機試驗顯示整體影響可能不大，且 PPI 能降低腸胃道出血風險。",
         "refs": [
           {
@@ -21927,6 +21927,7 @@ window.GAME_DATA = {
           "summary": "併用可能降低抗血小板作用。"
         }
       ],
+      "interactionImage": "",
       "teacher": {
         "review": "實習生必須抓出 Esomeprazole 會強烈抑制 CYP2C19 酵素活性。",
         "risk": "Clopidogrel 需經 CYP2C19 代謝才有活性。併服 Esomeprazole 會導致 Clopidogrel 療效大幅降低，增加心血管血栓風險。",
@@ -21943,9 +21944,9 @@ window.GAME_DATA = {
       "title": "葡萄柚危機",
       "star": 1,
       "student": {
-        "patient": "陳小姐，55 歲。因高膽固醇血症，目前規律服用降血脂藥物控制病情。",
-        "context": "陳小姐回診領藥時，提到最近朋友送了一大箱進口葡萄柚，詢問可不可以榨汁每天喝。",
-        "rx": "Atorvastatin 20mg 1tab QD",
+        "patient": "陳小姐，55 歲。高膽固醇血症，目前規律服用降血脂藥物控制病情。\n回診領藥時，提到最近朋友送了一大箱葡萄柚，想要補充維他命C，詢問可不可以每天榨汁來喝。",
+        "context": "",
+        "rx": "Atorvastatin 20mg/Tab 1tab QD",
         "evidence": "",
         "refs": [
           {
@@ -21961,6 +21962,8 @@ window.GAME_DATA = {
             "Rosuvastatin 10mg/Tab"
           ],
           "fields": [
+            "藥品學名",
+            "中文名稱",
             "商品名稱",
             "成分及含量",
             "藥品手冊適應症",
@@ -21974,6 +21977,7 @@ window.GAME_DATA = {
         }
       },
       "interactions": [],
+      "interactionImage": "",
       "teacher": {
         "review": "實習生必須抓出 Atorvastatin 在體內主要是經由腸道與肝臟的 CYP3A4 酵素代謝 。",
         "risk": "葡萄柚汁含有強烈抑制 CYP3A4 酵素的成分。若併服會抑制 Atorvastatin 的代謝，使藥物血中濃度大幅增加，極易引發肌肉毒性，嚴重甚至導致橫紋肌溶解症 (rhabdomyolysis) 或急性腎衰竭 。",
@@ -21992,8 +21996,8 @@ window.GAME_DATA = {
       "title": "聰明藥危機",
       "star": 1,
       "student": {
-        "patient": "近期臨床現象：許多年輕人（高中生/大學生）在準備大考（如學測、國考）時，會服用長效型 ADHD 藥物來集中注意力。但因為這類藥物往往很大顆，或者學生為了「精準控制時間」而採取錯誤的服藥方式。\n\n林同學，18 歲高三生。近期因注意力不集中被診斷為輕度 ADHD。",
-        "context": "下週即將面臨學測，林同學跟醫師抱怨專思達 (Concerta) 藥丸太大顆吞不下去，而且他希望晚上熬夜看書時藥效能發揮。醫師在門診很忙，便口頭安撫：「吞不下去就咬碎吃，晚上要看書就傍晚吃。」",
+        "patient": "[近期臨床現象：許多高中生/大學生在準備大考（學測、國考）時，會服用長效型 ADHD 藥物來集中注意力。]\n林同學，18 歲高三生。近期因注意力不集中被診斷為輕度 ADHD。\n下週即將面臨學測，林同學跟醫師抱怨專思達 (Concerta) 藥丸太大顆吞不下去，而且他希望晚上熬夜看書時藥效能發揮。\n醫師在門診很忙，便口頭安撫：「吞不下去就咬碎吃，晚上要看書就傍晚吃。」",
+        "context": "",
         "rx": "MethylPhenidate ER 36mg/Tab 1Tab 咬碎/剝半 於傍晚 6 點服用。",
         "evidence": "",
         "refs": [
@@ -22026,6 +22030,7 @@ window.GAME_DATA = {
         }
       },
       "interactions": [],
+      "interactionImage": "",
       "teacher": {
         "review": "實習生必須敏銳識別出 Concerta 是採用高科技的 OROS（滲透壓控制釋放）專利技術。",
         "risk": "- 劑量傾瀉 (Dose Dumping)：OROS 劑型絕對不可咬碎、切半或磨粉。一旦破壞外殼，原本設計要在 12 小時內緩慢釋放的藥物，會在一瞬間全部進入血液，導致嚴重的藥物過量（極度焦慮、血壓狂飆），且下午藥效退去後會產生嚴重的「崩潰感 (Crash)」。\n- 嚴重失眠：傍晚服用長效興奮劑，會導致整夜無法入睡，隔天精神更差，完全本末倒置。",
