@@ -230,7 +230,7 @@ body{
 .itable{width:100%;border-collapse:collapse;font-size:13px;margin-top:8px}
 .itable th{background:#3a1a5e;color:#fff;padding:8px;text-align:left;font-weight:700}
 .itable td{padding:8px;border-bottom:1px solid var(--line);vertical-align:top}
-.sev{font-weight:900}.sev.major{color:var(--red-d)}.sev.moderate{color:var(--gold-d)}
+.sev{font-weight:900}.sev.major{color:var(--red-d)}.sev.moderate{color:var(--gold-d)}.sev.minor{color:var(--green-d)}
 
 /* 院內藥品資訊 */
 .drug-sec{margin-top:16px}
@@ -1252,9 +1252,13 @@ function edCaseForm(c){
     <div class="tb-section-title" style="font-size:15px;margin-top:18px"><span class="bar"></span>學生看得到</div>
     ${edField("病人資訊與情境",[s.patient,s.context].filter(Boolean).join("\n"),1)}
     ${edField("醫師處方",s.rx,1)}
-    <label>藥物交互作用圖片（可上傳截圖，選填）</label>
+    <label>藥物交互作用表格（建議用這個，容量小）</label>
+    <div id="interList">${(c.interactions||[]).map(i=>interRow(i.drugs,i.sev,i.doc,i.summary)).join("")}</div>
+    <datalist id="sevlist"><option value="Major"></option><option value="Moderate"></option><option value="Minor"></option></datalist>
+    <button type="button" class="btn-ghost" onclick="addInterRow()" style="margin-top:4px">＋ 新增交互作用列</button>
+    <label style="margin-top:14px">或上傳藥物交互作用圖片（選填，容量較大）</label>
     <input type="file" accept="image/*" id="f_interimg" onchange="edInterImg(event)">
-    <div id="interPrev" style="margin-top:8px">${c.interactionImage?`<img src="${c.interactionImage}" style="max-width:240px;border-radius:10px">`:""}</div>
+    <div id="interPrev" style="margin-top:8px">${c.interactionImage?`<img src="${c.interactionImage}" style="max-width:240px;border-radius:10px"><br><button type="button" class="btn-del" style="margin-top:6px" onclick="edClearInterImg()">移除圖片</button>`:""}</div>
     <label>院內藥品資訊：這題要掛哪幾支藥（可複選）</label>
     <input type="text" placeholder="🔍 輸入藥名或學名搜尋（例如 esome、耐適恩）" oninput="drugFilter(this.value)" style="margin-bottom:8px">
     <div class="checkgrid" id="drugPick">${(DATA.drugs||[]).map(d=>{
@@ -1293,10 +1297,20 @@ function refRow(t,u){
     <button type="button" class="btn-del" onclick="this.parentNode.remove()">✕</button></div>`;
 }
 function addRefRow(){ document.getElementById("refList").insertAdjacentHTML("beforeend", refRow("","")); }
+function interRow(d,sev,doc,sum){
+  return `<div class="inter-row" style="display:grid;grid-template-columns:1.4fr .7fr .7fr 1.6fr auto;gap:6px;margin-bottom:6px;align-items:start">
+    <input class="ir-d" placeholder="藥物（如 A — B）" value="${esc(d||"")}">
+    <input class="ir-s" placeholder="嚴重性" list="sevlist" value="${esc(sev||"")}">
+    <input class="ir-doc" placeholder="文件" value="${esc(doc||"")}">
+    <textarea class="ir-sum" placeholder="綜述" style="min-height:38px">${esc(sum||"")}</textarea>
+    <button type="button" class="btn-del" onclick="this.parentNode.remove()">✕</button></div>`;
+}
+function addInterRow(){ document.getElementById("interList").insertAdjacentHTML("beforeend", interRow("","","","")); }
+function edClearInterImg(){ edCaseForm._interImg=""; document.getElementById("interPrev").innerHTML=""; }
 function edInterImg(e){
   const f=e.target.files[0]; if(!f) return;
   const rd=new FileReader(); rd.onload=()=>{ edCaseForm._interImg=rd.result;
-    document.getElementById("interPrev").innerHTML=`<img src="${rd.result}" style="max-width:240px;border-radius:10px">`; };
+    document.getElementById("interPrev").innerHTML=`<img src="${rd.result}" style="max-width:240px;border-radius:10px"><br><button type="button" class="btn-del" style="margin-top:6px" onclick="edClearInterImg()">移除圖片</button>`; };
   rd.readAsDataURL(f);
 }
 function gv(l){ const el=document.getElementById("f_"+l); return el?el.value.trim():""; }
@@ -1319,7 +1333,10 @@ function edSaveCase(id){
     student:{ patient:gv("病人資訊與情境"),context:"",rx:gv("醫師處方"),evidence:gv("臨床實證參考"),
       refs: refs,
       drugInfo:{ drugs:pickVals("drugPick"), fields:pickVals("fieldPick") } },
-    interactions:(prev&&prev.interactions)||[],
+    interactions:[...document.querySelectorAll("#interList .inter-row")].map(r=>({
+      drugs:r.querySelector(".ir-d").value.trim(), sev:r.querySelector(".ir-s").value.trim(),
+      doc:r.querySelector(".ir-doc").value.trim(), summary:r.querySelector(".ir-sum").value.trim()
+    })).filter(x=>x.drugs),
     interactionImage: edCaseForm._interImg || (prev&&prev.interactionImage) || "",
     teacher:{ review:gv("專業審核"),risk:gv("風險警告"),planB:gv("替代建議 B計畫"),
       chips: gv("籌碼操作（每行一條）").split("\n").map(x=>x.trim()).filter(Boolean) }
