@@ -22058,6 +22058,48 @@ window.GAME_DATA = {
           "- 難點解析：劑型學 (OROS 滲透壓) 的基礎應用。學生必須立刻察覺「不可咬碎」，主要考驗衛教觀念的糾正"
         ]
       }
+    },
+    {
+      "id": "case-1787195179741",
+      "code": "CASE-005",
+      "title": "綜合感冒藥的疊加陷阱",
+      "star": 1,
+      "student": {
+        "patient": "李同學，大學生。因發燒、喉嚨痛前來看診。醫師開了常規的退燒止痛藥。\n李同學在領藥時提問：「藥師，我昨天晚上有去藥局買『伏冒熱飲』泡來喝，現在還可以繼續喝嗎？」",
+        "context": "",
+        "rx": "Acetaminophen 500mg/tab 1tab QID",
+        "evidence": "",
+        "refs": [
+          {
+            "title": "普拿疼伏冒熱飲散劑加強配方-衛署藥製字第050881號-仿單",
+            "url": "https://drive.google.com/file/d/1TcTnXExsxWQC3Rki-BnqIBjtA1MGxI78/view?usp=sharing"
+          }
+        ],
+        "drugInfo": {
+          "drugs": [
+            "Acetaminophen Syrup 24mg/mL 60mL/Bot",
+            "Acetaminophen  500mg/Tab",
+            "Utraphen 37.5/325 mg/Tab(複方)"
+          ],
+          "fields": [
+            "成人常用劑量說明",
+            "貯藏方式",
+            "用藥方法",
+            "特別用藥指示"
+          ]
+        }
+      },
+      "interactions": [],
+      "interactionImage": "",
+      "teacher": {
+        "review": "實習生必須立刻計算 Acetaminophen 的「每日最高安全劑量（4000mg）」",
+        "risk": "醫師開的處方已經是一天 2000mg。市售的綜合感冒藥或熱飲，幾乎都含有高劑量的 Acetaminophen。如果李同學把診所的藥和自己買的成藥一起吃，極容易超過每日 4000mg 的上限，引發猛爆性肝炎（肝毒性）。",
+        "planB": "強烈阻止病人：「診所的藥已經有退燒成分了，你買的熱飲絕對不能再一起喝！」",
+        "chips": [
+          "- 若藥師回答「可以啊，多喝水就好」，導致學生肝指數飆高，扣除綠籌碼（健康度）3 枚。",
+          "- 若藥師立刻制止重複用藥，不扣籌碼。"
+        ]
+      }
     }
   ]
 };
