@@ -1051,7 +1051,7 @@ function popCase(c){
         <div class="qr-box"><div id="qrCase"></div><div class="lbl">學生掃描看完整情境</div></div>
       </div>
       ${patientBlock(s)}
-      <div class="field"><div class="k">醫師處方</div><div class="v">${esc(s.rx)}</div></div>
+      <div class="field"><div class="k">醫師處方</div><div class="v">${esc(s.rx).replace(/\n/g,"<br>")}</div></div>
       ${renderInteractions(c)}
       ${s.evidence?`<details class="collap"><summary>臨床實證參考</summary><div class="inner">${esc(s.evidence)}</div></details>`:""}
       ${(s.refs&&s.refs.length)?`<details class="collap"><summary>延伸文獻</summary><div class="inner">${s.refs.map(r=>`<a class="ref-link" href="${r.url}" target="_blank">${esc(r.title)}</a>`).join("<br>")}</div></details>`:""}
@@ -1089,7 +1089,7 @@ function renderStudent(type,id){
     <div class="stu-hero"><div class="code eng">${esc(c.code)} <span style="color:var(--gold)">${esc(starLine(c.star))}</span></div></div>
     <div class="stu-card">
       ${patientBlock(s)}
-      <div class="field"><div class="k">醫師處方</div><div class="v">${esc(s.rx)}</div></div>
+      <div class="field"><div class="k">醫師處方</div><div class="v">${esc(s.rx).replace(/\n/g,"<br>")}</div></div>
       ${renderInteractions(c)}
       ${s.evidence?`<details class="collap"><summary>臨床實證參考</summary><div class="inner">${esc(s.evidence)}</div></details>`:""}
       ${(s.refs&&s.refs.length)?`<details class="collap"><summary>延伸文獻</summary><div class="inner">${s.refs.map(r=>`<a class="ref-link" href="${r.url}" target="_blank">${esc(r.title)}</a>`).join("<br>")}</div></details>`:""}
@@ -1149,7 +1149,7 @@ function teacherCase(id){
       <div class="card-pop-head" style="border-radius:14px;margin:-6px -6px 18px">
         <div><div class="code eng">${esc(c.code)} · ${esc(STAR_LABELS[c.star])}</div><h3>${esc(c.title)}</h3></div></div>
       ${patientBlock(s)}
-      <div class="field"><div class="k">醫師處方</div><div class="v">${esc(s.rx)}</div></div>
+      <div class="field"><div class="k">醫師處方</div><div class="v">${esc(s.rx).replace(/\n/g,"<br>")}</div></div>
 
       ${renderInteractions(c)}
 
