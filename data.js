@@ -22100,6 +22100,81 @@ window.GAME_DATA = {
           "- 若藥師立刻制止重複用藥，不扣籌碼。"
         ]
       }
+    },
+    {
+      "id": "case-1787196691600",
+      "code": "CASE-006",
+      "title": "鐵胃的代價",
+      "star": 2,
+      "student": {
+        "patient": "先生，20 歲男性。泌尿道感染，同時向醫師抱怨近期壓力大常胃痛。",
+        "context": "",
+        "rx": "Ciprofloxacin 500mg/tab 1tab BID \nTopaal(Algitab) chewable Tab(複方) 1tab TID。",
+        "evidence": "",
+        "refs": [
+          {
+            "title": "Algitab 仿單",
+            "url": "https://drive.google.com/file/d/1gpp9ZL4cKrgVk34SpSTQ8bpXAjOg48vl/view?usp=sharing"
+          },
+          {
+            "title": "CIPROfloxacin 500mgTab 仿單",
+            "url": "https://drive.google.com/file/d/143WhE8py2suvaghobFDsuCUMzlH9rCje/view?usp=sharing"
+          }
+        ],
+        "drugInfo": {
+          "drugs": [
+            "Pantoprazole 40mg/Vial",
+            "Aluminum hydroxide 324mg/Tab",
+            "Calcium Carbonate  500mg/Tab",
+            "CIPROfloxacin  500mg/Tab",
+            "Dexlansoprazole 60mg/Cap",
+            "Esomeprazole(錠劑) 40mg/Tab",
+            "Famotidine  20mg/Tab",
+            "Lansoprazole 30mg/Tab(口溶錠)",
+            "Misoprostol 200mcg/Tab",
+            "Rabeprazole 20mg/Tab",
+            "Topaal(Algitab) chewable Tab(複方)"
+          ],
+          "fields": [
+            "成分及含量",
+            "藥品手冊適應症",
+            "成人常用劑量說明",
+            "貯藏方式",
+            "用藥方法",
+            "特別用藥指示",
+            "健保價格",
+            "自費價"
+          ]
+        }
+      },
+      "interactions": [
+        {
+          "drugs": "CIPROFLOXACIN - FAMOTIDINE:",
+          "sev": "Major",
+          "doc": "GOOD",
+          "summary": "Concurrent use of CIPROFLOXACIN and QT PROLONGING AGENTS may result in an increased risk of QT interval prolongation and torsade de pointes."
+        },
+        {
+          "drugs": "CALCIUM CARBONATE - CIPROFLOXACIN:",
+          "sev": "Major",
+          "doc": "GOOD",
+          "summary": "Concurrent use of CIPROFLOXACIN and ANTACIDS may result in reduced ciprofloxacin exposure."
+        }
+      ],
+      "interactionImage": "",
+      "teacher": {
+        "review": "Ciprofloxacin 遇多價陽離子（鋁、鎂、鈣、鐵）會產生「螯合作用 (Chelation)」，導致抗生素在腸道沉澱，吸收率大幅下降而失效。",
+        "risk": "發藥時強制衛教：「抗生素與胃藥必須『錯開至少 2 小時』服用。或更換胃藥」",
+        "planB": "",
+        "chips": [
+          "- 未衛教導致感染惡化引發腎盂腎炎，扣綠籌碼 3 枚。",
+          "- 成功衛教錯開時間，不扣籌碼，獎勵綠籌碼 1 枚。",
+          "- 可以於藥品資料中提問 **碳酸鈣錠**",
+          "1.當作**胃藥**使用：應**飯後**嚼碎後吞服。",
+          "2.治療高磷酸血症：請盡量磨粉或自行咬碎與飯菜、肉類、湯一起吃，使藥物能立即有效防止食物中的磷自腸胃道吸收。",
+          "- 可以於藥品資料中提問為何不使用PPI"
+        ]
+      }
     }
   ]
 };
