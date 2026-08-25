@@ -221,6 +221,10 @@ body{
 .case-row .code{font-family:"Fredoka",sans-serif;font-weight:700;color:var(--blue-d);min-width:88px}
 .case-row .t{font-weight:700}
 .case-row .go{margin-left:auto;color:var(--ink-soft);font-size:20px}
+.assign-btn{margin-left:auto;font-family:inherit;font-weight:700;font-size:13px;cursor:pointer;color:#fff;
+  background:var(--blue);border:none;padding:7px 13px;border-radius:10px;white-space:nowrap}
+.assign-btn:hover{background:var(--blue-d)}
+.case-row .go{color:var(--ink-soft);font-size:20px}
 .answer-flag{display:inline-flex;align-items:center;gap:6px;background:rgba(216,74,59,.12);
   color:var(--red-d);font-weight:700;font-size:12px;padding:3px 10px;border-radius:20px}
 .tbox{background:rgba(216,74,59,.06);border:2px solid rgba(216,74,59,.28);border-radius:14px;padding:16px;margin-top:14px}
@@ -1116,6 +1120,7 @@ function renderTeacherList(){
     list.forEach(c=>{
       html+=`<div class="case-row" onclick="teacherCase('${c.id}')">
         <span class="code">${esc(c.code)}</span><span class="t">${esc(c.title)}</span>
+        <button class="assign-btn" onclick="event.stopPropagation();assignCase('${c.id}')">📤 指定給學生</button>
         <span class="answer-flag">🔑 含解答</span><span class="go">›</span></div>`;
     });
     html+=`</div>`;
@@ -1140,8 +1145,8 @@ function teacherRole(id){
       </div></div></div>`;
   window.scrollTo(0,0);
 }
-function teacherCase(id){
-  const c=findCase(id), s=c.student, t=c.teacher;
+function assignCase(id){ const c=findCase(id); if(c) popCase(c); }
+function teacherCase(id){  const c=findCase(id), s=c.student, t=c.teacher;
   const d=document.getElementById("teacherDetail");
   document.getElementById("teacherList").style.display="none"; d.style.display="block";
   d.innerHTML=`<button class="back-link" onclick="renderTeacherList()">‹ 回總覽</button>
