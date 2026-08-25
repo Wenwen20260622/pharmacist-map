@@ -446,7 +446,7 @@ window.GAME_DATA_CASES = [
     "title": "糖尿病老藥的復古陷阱",
     "star": 2,
     "student": {
-      "patient": "70歲阿嬤，近期腎功能變差 (eGFR <15 )，血糖控制不佳。\n醫師為了加強控糖，調整了血糖劑量。",
+      "patient": "70歲阿嬤，近期腎功能變差 (eGFR : 11 )，血糖控制不佳。\n醫師為了加強控糖，調整了血糖劑量。",
       "context": "",
       "rx": "Glimepiride 2mg/Tab 2# BID",
       "evidence": "",
@@ -461,13 +461,15 @@ window.GAME_DATA_CASES = [
           "Glimepiride  2mg/Tab",
           "Glimet 2/500 mg/Tab(複方)",
           "Linagliptin F.C. 5mg/Tab",
+          "Metformin  500mg/Tab",
           "Trajenta duo 2.5/850 mg/Tab"
         ],
         "fields": [
           "成分及含量",
           "成人常用劑量說明",
           "用藥方法",
-          "特別用藥指示"
+          "特別用藥指示",
+          "腎劑量調整"
         ]
       }
     },
@@ -480,6 +482,202 @@ window.GAME_DATA_CASES = [
       "chips": [
         "- 若未攔截導致阿嬤半夜低血糖昏迷，扣除綠籌碼（健康度）4 枚。",
         "- 若成功建議換成不需調劑量的 DPP-4 抑制劑，不扣籌碼。"
+      ]
+    }
+  },
+  {
+    "id": "case-1787630133339",
+    "code": "CASE-017",
+    "title": "致命的消炎止痛藥",
+    "star": 2,
+    "student": {
+      "patient": "懷孕 30 週（第三孕期）的孕婦，因扭傷導致嚴重背痛前往骨科就診。\n骨科醫師開立了常規的非類固醇消炎止痛藥 (NSAID) 緩解疼痛。",
+      "context": "",
+      "rx": "Diclofenac 75mg/Tab 1# BID。",
+      "evidence": "",
+      "refs": [
+        {
+          "title": "FDA recommends avoiding use of NSAIDs in pregnancy.pdf",
+          "url": "https://drive.google.com/file/d/1bwWDuKb7VNxIXr0J2FKzUvw6LmQKQbsg/view?usp=drive_link"
+        },
+        {
+          "title": "Voren安全資訊風險溝通表 10911.pdf",
+          "url": "https://drive.google.com/file/d/1dppbf1T2HG-M2dCtDtOHvYfEKBCQNqkf/view?usp=drive_link"
+        },
+        {
+          "title": "Voren MicroMedex.jpg",
+          "url": "https://drive.google.com/file/d/1STV9ynPnLSz6bvfH2yosJP7yKzZaBsWw/view?usp=drive_link"
+        },
+        {
+          "title": "Voren(pregnency) MicroMedex.pdf",
+          "url": "https://drive.google.com/file/d/18SDPTCNi9T9faItQrWCY6xKjd78idDRM/view?usp=drive_link"
+        }
+      ],
+      "drugInfo": {
+        "drugs": [
+          "Diclofenac Pot.(錠劑) 25mg/Tab",
+          "Diclofenac SR.(錠劑)  75mg/Tab"
+        ],
+        "fields": [
+          "成人常用劑量說明",
+          "貯藏方式",
+          "用藥方法",
+          "特別用藥指示",
+          "懷孕分級",
+          "授乳警示"
+        ]
+      }
+    },
+    "interactions": [],
+    "interactionImage": "",
+    "teacher": {
+      "review": "FDA 警告懷孕後期 (第三孕期，約20週後) 絕對禁用 NSAIDs。",
+      "risk": "會導致胎兒的「動脈導管提早閉合」，引發胎兒肺動脈高壓甚至死胎，且會減少羊水量（羊水過少症）。",
+      "planB": "退回處方！建議改用 Acetaminophen（普拿疼，孕婦首選止痛藥），並輔以物理復健治療。",
+      "chips": [
+        "- 若藥師未看孕期直接發藥，導致胎兒動脈導管提早閉合送急診，扣除綠籌碼（健康度）5 枚。",
+        "- 若藥師成功攔截並更換為普拿疼，守護母嬰安全，不扣籌碼。"
+      ]
+    }
+  },
+  {
+    "id": "case-1787630630669",
+    "code": "CASE-011",
+    "title": "止痛藥的雙面刃",
+    "star": 3,
+    "student": {
+      "patient": "林小姐近期因嚴重車禍進行右腳膝關節全置換術，目前正在規律服用 Rivaroxaban 來預防靜脈血栓發生 。\n出院後，覺得傷口與骨折處常常有無法忍受的疼痛，於是回到門診求診 。醫師開立了常規的強效消炎止痛藥 。",
+      "context": "",
+      "rx": "Rivaroxaban 10mg/tab  1# QD \nDiclofenac 75mg/tab   1# HS",
+      "evidence": "",
+      "refs": [
+        {
+          "title": "Rivaroxaban仿單 20251013.pdf",
+          "url": "https://drive.google.com/file/d/1CU9OYRun8N8p6WA5f3J8ECR2lLyHWX9k/view?usp=drive_link"
+        }
+      ],
+      "drugInfo": {
+        "drugs": [
+          "Diclofenac Pot.(錠劑) 25mg/Tab",
+          "Diclofenac SR.(錠劑)  75mg/Tab",
+          "Rivaroxaban 2.5mg/Tab",
+          "RIVAROXABAN 15mg/Tab",
+          "Rivaroxaban 10mg/Tab"
+        ],
+        "fields": [
+          "成人常用劑量說明",
+          "貯藏方式",
+          "用藥方法",
+          "特別用藥指示"
+        ]
+      }
+    },
+    "interactions": [
+      {
+        "drugs": "DICLOFENAC -- RIVAROXABAN:",
+        "sev": "Major",
+        "doc": "FAIR",
+        "summary": "Concurrent use of ANTICOAGULANTS and NSAIDS may result in an increased risk of bleeding."
+      }
+    ],
+    "interactionImage": "",
+    "teacher": {
+      "review": "實習生必須敏銳抓出 Diclofenac (服他寧) 屬於非類固醇類消炎止痛藥 (NSAID)",
+      "risk": "NSAID 這類藥品本身就會影響血液凝集功能 。若與新型口服抗凝血劑 (DOAC, 如拜瑞妥) 合併服用時，會加成拜瑞妥的抗凝血作用，大幅增加出血的風險，特別是腸胃道出血 。若未攔截，病人 5 天後可能會開始覺得頭暈、身體虛弱無力，出現嚴重貧血現象，最終因胃出血送急診 。",
+      "planB": "基礎解法：建議醫師停用 NSAID 類止痛藥，為減少出血風險，應盡量避免併服 。可建議改開立不影響血小板凝集的單純止痛藥（如 Acetaminophen 普拿疼）。\n\n進階解法：若病人疼痛分數極高（Acetaminophen 壓不下來），實習生可建議醫師評估使用弱鴉片類止痛藥（如 Tramadol），或是改用局部的外用消炎止痛藥布/藥膏來替代口服 NSAID，以降低全身性的副作用。若因特殊考量必須併用 NSAID，藥師必須強烈提醒病人謹慎自我監測是否有出血症狀（如黑便、血便、流鼻血、異常瘀青等） 。",
+      "chips": [
+        "- 若藥師未發現交互作用而照發藥品，導致病人發生嚴重胃出血 ，扣除綠籌碼（健康度）4 枚。",
+        "- 若藥師成功攔截，並提出更換止痛藥的建議，成功拆除抗凝血炸彈，不扣額外籌碼（完美的用藥安全守護！）。",
+        "- 若藥師不僅提出換藥，還主動對病人進行了「出血症狀自我監測 」的衛教演練，獎勵綠籌碼 1 枚（展現卓越的衛教溝通能力）。",
+        "- 難點解析：骨科與心臟科的常見衝突，加乘出血風險 。考量到術後真的會痛，藥師必須提出合理的止痛替代方案（如 Acetaminophen），不能只說「不能吃」。"
+      ]
+    }
+  },
+  {
+    "id": "case-1787634364117",
+    "code": "CASE-012",
+    "title": "心臟科致命組合",
+    "star": 3,
+    "student": {
+      "patient": "鄒爺爺，90 歲。有高血壓病史。近期因呼吸短促就醫，醫師診斷為心房纖維顫動 (Atrial fibrillation) 合併心臟衰竭引起下肢水腫 。",
+      "context": "",
+      "rx": "Digoxin 0.25mg/Tab  1# QD \nFurosemide 40mg/Tab  1# QD",
+      "evidence": "",
+      "refs": [
+        {
+          "title": "Digoxin 仿單.pdf",
+          "url": "https://drive.google.com/file/d/1PZDtSkLMKtBzYDE9vYkygLgc8uC4F2us/view?usp=drive_link"
+        }
+      ],
+      "drugInfo": {
+        "drugs": [
+          "Digoxin(錠劑) 0.25mg/Tab",
+          "Furosemide(錠劑) 40mg/Tab"
+        ],
+        "fields": [
+          "成人常用劑量說明",
+          "貯藏方式",
+          "用藥方法",
+          "特別用藥指示"
+        ]
+      }
+    },
+    "interactions": [
+      {
+        "drugs": "DIGOXIN -- FUROSEMIDE:",
+        "sev": "Moderate",
+        "doc": "FAIR",
+        "summary": "Concurrent use of DIGOXIN and LOOP DIURETICS may result in increased risk of digoxin toxicity (nausea, vomiting, cardiac arrhythmias)."
+      }
+    ],
+    "interactionImage": "",
+    "teacher": {
+      "review": "實習生必須抓出 Furosemide 是排鉀型利尿劑，會造成病人體內的鉀離子流失 。",
+      "risk": "毛地黃 (Digoxin) 的安全治療濃度區間非常狹窄 。當病人發生「低血鉀」時，會增加心肌對毛地黃的敏感度，極易誘發毛地黃中毒，導致嚴重噁心、嘔吐、視覺異常（黃綠色盲），甚至是致命性的心律不整 。\n    ◦ 補充: Digoxin使用劑量是10-15 micro-g/kg：治療CHF，藥物濃度理想範圍是0.8~2.0ng/ml；治療Af，藥物濃度理想範圍是1.5~2.5ng/ml。",
+      "planB": "處方介入：主動建議醫師加開「鉀離子補充劑 (如 Slow-K)」，或是將利尿劑更改/合併為「保鉀型利尿劑 (如 Spironolactone)」。\n\n衛教防守：發藥時，強烈提醒家屬讓爺爺多補充富含鉀離子的食物（如香蕉、柑橘），並告知若出現「眼前看起來黃黃綠綠的、一直想吐」，必須立刻停藥掛急診並抽血監測鉀與鎂離子濃度 。建議改用不需依腎功能調整劑量的 DPP-4 抑制劑（如 linagliptin/Trajenta）。",
+      "chips": [
+        "- 若藥師未察覺低血鉀風險直接發藥，爺爺兩週後因嚴重嘔吐與心律不整掛急診 ，扣除綠籌碼（健康度）4 枚。",
+        "- 若藥師成功介入建議補充鉀離子，或進行了完整的飲食衛教，完美拆解中毒炸彈，不扣籌碼。",
+        "- 難點解析：老人科經典地雷。排鉀利尿劑導致低血鉀，進而誘發毛地黃中毒 。考驗電解質與狹窄治療指數 (NTI) 藥物的連動思維。"
+      ]
+    }
+  },
+  {
+    "id": "case-1787634638661",
+    "code": "CASE-013",
+    "title": "氣喘與偏頭痛的衝突",
+    "star": 3,
+    "student": {
+      "patient": "林小姐，28 歲。從小就有嚴重的氣喘 (Asthma) 病史，需隨身攜帶擴張劑。\n因為長期的偏頭痛與工作壓力帶來的心悸，前往神經內科就診。",
+      "context": "",
+      "rx": "Propranolol 10mg/Tab  1# TID",
+      "evidence": "",
+      "refs": [
+        {
+          "title": "propranolol-contraindicated-MICROMEDEX.pdf",
+          "url": "https://drive.google.com/file/d/10z3Ree2VDaML57WcSoPXZl4r4FLkuARZ/view?usp=drive_link"
+        }
+      ],
+      "drugInfo": {
+        "drugs": [
+          "Propranolol 10mg/Tab(鋁箔)"
+        ],
+        "fields": [
+          "成人常用劑量說明",
+          "貯藏方式",
+          "用藥方法"
+        ]
+      }
+    },
+    "interactions": [],
+    "interactionImage": "",
+    "teacher": {
+      "review": "實習生必須檢視病人的「過去病史（氣喘）」",
+      "risk": "Propranolol 是「非選擇性」的 Beta 阻斷劑，除了作用於心臟，也會阻斷支氣管的 Beta-2 受體。氣喘病人一吃，極可能引發嚴重的支氣管痙攣（氣喘急性發作），甚至窒息",
+      "planB": "建議將藥物更改為針對心臟的「選擇性 Beta-1 阻斷劑（如 Bisoprolol）」，或改用其他類別的偏頭痛預防藥物（如 Flunarizine）。",
+      "chips": [
+        "- 若藥師未看病史直接發藥，病人當晚氣喘大發作送急診插管，扣除綠籌碼（健康度）5 枚。",
+        "- 若藥師成功跨科別攔截，守住呼吸道防線，不扣籌碼，獎勵綠籌碼 1 枚。"
       ]
     }
   }
