@@ -234,6 +234,10 @@ body{
 .itable th{background:#3a1a5e;color:#fff;padding:8px;text-align:left;font-weight:700}
 .itable td{padding:8px;border-bottom:1px solid var(--line);vertical-align:top}
 .sev{font-weight:900}.sev.major{color:var(--red-d)}.sev.moderate{color:var(--gold-d)}.sev.minor{color:var(--green-d)}
+.rx-table{width:100%;border-collapse:collapse;font-size:13px;min-width:580px}
+.rx-table th{background:var(--green);color:#fff;padding:7px 10px;text-align:left;font-weight:700;white-space:nowrap}
+.rx-table td{padding:7px 10px;border-bottom:1px solid var(--line);white-space:nowrap;color:var(--ink)}
+.rx-table tr:nth-child(even) td{background:rgba(74,124,89,.04)}
 
 /* 院內藥品資訊 */
 .drug-sec{margin-top:16px}
@@ -1040,6 +1044,16 @@ function patientBlock(s){
   const txt=[s.patient,s.context].filter(Boolean).join("\n");
   return `<div class="field"><div class="k">病人資訊</div><div class="v">${esc(txt).replace(/\n/g,"<br>")}</div></div>`;
 }
+function renderRx(s){
+  const rt=s.rxTable;
+  if(rt&&rt.length){
+    const rows=rt.map(r=>`<tr><td>${esc(r.name)}</td><td>${esc(r.dose)}</td><td>${esc(r.doseUnit)}</td><td>${esc(r.usage)}</td><td>${esc(r.route)}</td><td>${esc(r.total)}</td><td>${esc(r.totalUnit)}</td><td>${esc(r.days)}</td></tr>`).join("");
+    return `<div class="field"><div class="k">醫師處方</div>
+      <div class="tbl-scroll"><table class="rx-table"><tr><th>藥名</th><th>用量</th><th>單位</th><th>用法</th><th>途徑</th><th>總量</th><th>單位</th><th>天數</th></tr>${rows}</table></div></div>`;
+  }
+  if(s.rx) return `<div class="field"><div class="k">醫師處方</div><div class="v">${esc(s.rx).replace(/\n/g,"<br>")}</div></div>`;
+  return "";
+}
 function renderInteractions(c){
   const hasTbl=c.interactions&&c.interactions.length;
   const hasImg=c.interactionImage;
@@ -1068,7 +1082,7 @@ function popCase(c){
         <div class="qr-box"><div id="qrCase"></div><div class="lbl">學生掃描看完整情境</div></div>
       </div>
       ${patientBlock(s)}
-      <div class="field"><div class="k">醫師處方</div><div class="v">${esc(s.rx).replace(/\n/g,"<br>")}</div></div>
+      ${renderRx(s)}
       ${renderInteractions(c)}
       ${s.evidence?`<details class="collap"><summary>臨床實證參考</summary><div class="inner">${esc(s.evidence)}</div></details>`:""}
       ${(s.refs&&s.refs.length)?`<details class="collap"><summary>延伸文獻</summary><div class="inner">${s.refs.map(r=>`<a class="ref-link" href="${r.url}" target="_blank">${esc(r.title)}</a>`).join("<br>")}</div></details>`:""}
@@ -1106,7 +1120,7 @@ function renderStudent(type,id){
     <div class="stu-hero"><div class="code eng">${esc(c.code)} <span style="color:var(--gold)">${esc(starLine(c.star))}</span></div></div>
     <div class="stu-card">
       ${patientBlock(s)}
-      <div class="field"><div class="k">醫師處方</div><div class="v">${esc(s.rx).replace(/\n/g,"<br>")}</div></div>
+      ${renderRx(s)}
       ${renderInteractions(c)}
       ${s.evidence?`<details class="collap"><summary>臨床實證參考</summary><div class="inner">${esc(s.evidence)}</div></details>`:""}
       ${(s.refs&&s.refs.length)?`<details class="collap"><summary>延伸文獻</summary><div class="inner">${s.refs.map(r=>`<a class="ref-link" href="${r.url}" target="_blank">${esc(r.title)}</a>`).join("<br>")}</div></details>`:""}
@@ -1180,7 +1194,7 @@ function teacherCase(id){  const c=findCase(id), s=c.student, t=c.teacher;
       <div class="card-pop-head" style="border-radius:14px;margin:-6px -6px 18px">
         <div><div class="code eng">${esc(c.code)} · ${esc(STAR_LABELS[c.star])}</div><h3>${esc(c.title)}</h3></div></div>
       ${patientBlock(s)}
-      <div class="field"><div class="k">醫師處方</div><div class="v">${esc(s.rx).replace(/\n/g,"<br>")}</div></div>
+      ${renderRx(s)}
 
       ${renderInteractions(c)}
 
@@ -1282,7 +1296,11 @@ function edCaseForm(c){
     ${edField("標題",c.title)}
     <div class="tb-section-title" style="font-size:15px;margin-top:18px"><span class="bar"></span>學生看得到</div>
     ${edField("病人資訊與情境",[s.patient,s.context].filter(Boolean).join("\n"),1)}
-    ${edField("醫師處方",s.rx,1)}
+    ${edField("醫師處方（純文字，舊題沿用；有填下方表格時以表格為準）",s.rx,1)}
+    <label>醫師處方箋表格（一列一個藥，建議用這個）</label>
+    <div style="font-size:12px;color:var(--ink-soft);margin-bottom:6px">欄位順序：藥名 ・ 用量 ・ 單位 ・ 用法 ・ 途徑 ・ 總量 ・ 單位 ・ 天數</div>
+    <div id="rxList">${(s.rxTable||[]).map(r=>rxRow(r)).join("")}</div>
+    <button type="button" class="btn-ghost" onclick="addRxRow()" style="margin-top:4px">＋ 新增一列處方</button>
     <label>藥物交互作用表格（建議用這個，容量小）</label>
     <div id="interList">${(c.interactions||[]).map(i=>interRow(i.drugs,i.sev,i.doc,i.summary)).join("")}</div>
     <datalist id="sevlist"><option value="Major"></option><option value="Moderate"></option><option value="Minor"></option></datalist>
@@ -1337,6 +1355,19 @@ function interRow(d,sev,doc,sum){
     <button type="button" class="btn-del" onclick="this.parentNode.remove()">✕</button></div>`;
 }
 function addInterRow(){ document.getElementById("interList").insertAdjacentHTML("beforeend", interRow("","","","")); }
+function rxRow(r){ r=r||{};
+  return `<div class="rx-row" style="display:grid;grid-template-columns:1.6fr .6fr .7fr .7fr .7fr .6fr .7fr .55fr auto;gap:5px;margin-bottom:6px">
+    <input class="rx-name" placeholder="藥名" value="${esc(r.name||"")}">
+    <input class="rx-dose" placeholder="用量" value="${esc(r.dose||"")}">
+    <input class="rx-du" placeholder="單位" value="${esc(r.doseUnit||"")}">
+    <input class="rx-usage" placeholder="用法" value="${esc(r.usage||"")}">
+    <input class="rx-route" placeholder="途徑" value="${esc(r.route||"")}">
+    <input class="rx-total" placeholder="總量" value="${esc(r.total||"")}">
+    <input class="rx-tu" placeholder="單位" value="${esc(r.totalUnit||"")}">
+    <input class="rx-days" placeholder="天數" value="${esc(r.days||"")}">
+    <button type="button" class="btn-del" onclick="this.parentNode.remove()">✕</button></div>`;
+}
+function addRxRow(){ document.getElementById("rxList").insertAdjacentHTML("beforeend", rxRow({})); }
 function edClearInterImg(){ edCaseForm._interImg=""; document.getElementById("interPrev").innerHTML=""; }
 function edInterImg(e){
   const f=e.target.files[0]; if(!f) return;
@@ -1361,7 +1392,13 @@ function edSaveCase(id){
   const obj={
     id:id||("case-"+Date.now()), code:gv("卡號")||"CASE", title:gv("標題")||"未命名",
     star:(function(v){return v==="special"?"special":Number(v);})(document.getElementById("f_star").value),
-    student:{ patient:gv("病人資訊與情境"),context:"",rx:gv("醫師處方"),evidence:gv("臨床實證參考"),
+    student:{ patient:gv("病人資訊與情境"),context:"",rx:gv("醫師處方（純文字，舊題沿用；有填下方表格時以表格為準）"),evidence:gv("臨床實證參考"),
+      rxTable:[...document.querySelectorAll("#rxList .rx-row")].map(r=>({
+        name:r.querySelector(".rx-name").value.trim(), dose:r.querySelector(".rx-dose").value.trim(),
+        doseUnit:r.querySelector(".rx-du").value.trim(), usage:r.querySelector(".rx-usage").value.trim(),
+        route:r.querySelector(".rx-route").value.trim(), total:r.querySelector(".rx-total").value.trim(),
+        totalUnit:r.querySelector(".rx-tu").value.trim(), days:r.querySelector(".rx-days").value.trim()
+      })).filter(x=>x.name),
       refs: refs,
       drugInfo:{ drugs:pickVals("drugPick"), fields:pickVals("fieldPick") } },
     interactions:[...document.querySelectorAll("#interList .inter-row")].map(r=>({
