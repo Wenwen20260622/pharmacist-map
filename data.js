@@ -22169,10 +22169,96 @@ window.GAME_DATA = {
         "chips": [
           "- 未衛教導致感染惡化引發腎盂腎炎，扣綠籌碼 3 枚。",
           "- 成功衛教錯開時間，不扣籌碼，獎勵綠籌碼 1 枚。",
-          "- 可以於藥品資料中提問 **碳酸鈣錠**",
-          "1.當作**胃藥**使用：應**飯後**嚼碎後吞服。",
+          "- 可以於藥品資料中提問 碳酸鈣錠",
+          "1.當作胃藥使用：應飯後嚼碎後吞服。",
           "2.治療高磷酸血症：請盡量磨粉或自行咬碎與飯菜、肉類、湯一起吃，使藥物能立即有效防止食物中的磷自腸胃道吸收。",
           "- 可以於藥品資料中提問為何不使用PPI"
+        ]
+      }
+    },
+    {
+      "id": "case-1787619158538",
+      "code": "CASE-007",
+      "title": "顯影劑的隱藏危機",
+      "star": 2,
+      "student": {
+        "patient": "張阿伯，65 歲。第二型糖尿病患者，長期服用降血糖藥物。\n張阿伯近期因疑似腹部腫瘤，安排了下週二進行「腹部電腦斷層掃描 (CT with IV contrast)」。他拿著連續處方箋來領每個月的常規血糖藥。",
+        "context": "",
+        "rx": "Metformin 500mg/Tab 1Tab TID",
+        "evidence": "",
+        "refs": [
+          {
+            "title": "仿單 METFORMIN.pdf",
+            "url": "https://drive.google.com/file/d/1h4r2QCAqSZdURZzIm-Rm-iXoNU4oJcir/view?usp=drive_link"
+          },
+          {
+            "title": "2023 中華民國放射線醫學會對比劑手冊",
+            "url": "https://drive.google.com/file/d/1UtdwDuyhwjjfNEgVpaJGV2sc1viWKiIk/view?usp=drive_link"
+          }
+        ],
+        "drugInfo": {
+          "drugs": [
+            "ActosMET(Pioglitazone15mg+Metformin850mg",
+            "Metformin  500mg/Tab"
+          ],
+          "fields": [
+            "成人常用劑量說明",
+            "貯藏方式",
+            "用藥方法",
+            "特別用藥指示"
+          ]
+        }
+      },
+      "interactions": [],
+      "interactionImage": "",
+      "teacher": {
+        "review": "實習生必須對「含碘顯影劑」與特定藥物的關係有敏感度。",
+        "risk": "靜脈注射含碘顯影劑可能會引起急性的腎功能下降。若病人體內還有 Metformin，在腎功能變差的情況下，Metformin 無法排出，會引發極度致命的「乳酸中毒 (Lactic acidosis)」。",
+        "planB": "不用改處方，但藥師必須在藥袋上標記並衛教：「做電腦斷層的當天，以及檢查後的 48 小時內，Metformin 必須暫停服用！」待檢查後確認腎功能正常才可恢復吃藥。",
+        "chips": [
+          "- 若藥師只管發藥沒做特殊衛教，阿伯做完檢查後乳酸中毒進加護病房，扣除綠籌碼（健康度）4 枚。",
+          "- 若藥師成功圈出重點並完成停藥衛教，不扣籌碼。"
+        ]
+      }
+    },
+    {
+      "id": "case-1787620332146",
+      "code": "CASE-008",
+      "title": "一口水的失敗",
+      "star": 2,
+      "student": {
+        "patient": "Rybelsus (瑞倍適) 是目前全球唯一一款「口服」的 GLP-1 藥物，造福了怕打針的病人。但其吸收條件極度嚴苛，臨床上高達一半的病人因為「吃錯方法」導致藥效歸零。\n\n李媽媽，55 歲。害怕打針，醫師將她的減重藥/降糖藥換成口服的 Rybelsus。\n\n李媽媽在領藥時說：「改這個藥太好了，這樣我就不用打針！我明天早上起床，會把這個藥跟我的甲狀腺藥、高血壓藥，配一大杯溫開水一起吞下去。」",
+        "context": "",
+        "rx": "Semaglutide 7mg/Tab 1tab QD",
+        "evidence": "",
+        "refs": [
+          {
+            "title": "Rybelsus 仿單.pdf",
+            "url": "https://drive.google.com/file/d/1DiKjVT1VDh_O3R8dnC4TWgDsfBr0xsVR/view?usp=drive_link"
+          }
+        ],
+        "drugInfo": {
+          "drugs": [
+            "Semaglutide 14mg/Tab(30顆/盒)",
+            "Semaglutide 7mg/Tab(30顆/盒)"
+          ],
+          "fields": [
+            "成人常用劑量說明",
+            "貯藏方式",
+            "用藥方法",
+            "特別用藥指示"
+          ]
+        }
+      },
+      "interactions": [],
+      "interactionImage": "",
+      "teacher": {
+        "review": "實習生必須了解 Rybelsus 特殊的 SNAC 吸收促進劑機轉",
+        "risk": "只要胃裡有其他藥物、食物，甚至「水喝超過 120ml (約半杯)」，該藥物的吸收率就會降至 0%，等於吃安慰劑",
+        "planB": "-必須在每天早晨第一件事（完全空腹）吃。\n-只能配「半杯白開水 (不超過 120ml)」，不能用茶或飲料。\n-吃完後「至少等待 30 分鐘」，才能吃早餐或其他任何藥物。",
+        "chips": [
+          "- 若藥師只說「空腹吃」未強調水量與時間，李媽媽三個月後糖化血色素完全沒降，扣除綠籌碼（健康度）3 枚（治療失敗）。",
+          "- 若藥師完美講出「三個必須」的衛教關鍵，不扣籌碼。"
         ]
       }
     }
