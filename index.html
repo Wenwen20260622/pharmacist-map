@@ -219,9 +219,8 @@ body{
   border:2px solid var(--line);border-radius:14px;padding:12px 16px;margin-bottom:8px;transition:.12s}
 .case-row:hover{border-color:var(--blue);background:#fff;transform:translateX(3px)}
 .case-row .code{font-family:"Fredoka",sans-serif;font-weight:700;color:var(--blue-d);min-width:88px}
-.case-row .t{font-weight:700}
-.case-row .go{margin-left:auto;color:var(--ink-soft);font-size:20px}
-.assign-btn{margin-left:auto;font-family:inherit;font-weight:700;font-size:13px;cursor:pointer;color:#fff;
+.case-row .t{font-weight:700;flex:1;min-width:0}
+.assign-btn{font-family:inherit;font-weight:700;font-size:13px;cursor:pointer;color:#fff;
   background:var(--blue);border:none;padding:7px 13px;border-radius:10px;white-space:nowrap}
 .assign-btn:hover{background:var(--blue-d)}
 .case-row .go{color:var(--ink-soft);font-size:20px}
@@ -1114,11 +1113,13 @@ function renderTeacherList(){
   });
   html+=`</div></div>`;
   html+=`<div class="panel"><div class="tb-section-title"><span class="bar"></span>狀況題（點入看含答案的完整版）</div>`;
+  html+=`<input type="text" id="caseSearch" placeholder="🔍 搜尋卡號、標題或星級（例如 CASE-006、鐵胃、★★）" oninput="teacherCaseFilter(this.value)" style="width:100%;font-family:inherit;font-size:15px;padding:10px 14px;border:2px solid var(--line);border-radius:12px;margin-bottom:14px;background:#fff">`;
   STARS.forEach(s=>{
     const list=casesByStar(s); if(list.length===0) return;
-    html+=`<div class="star-group"><h4>${STAR_LABELS[s]}</h4>`;
+    html+=`<div class="star-group" data-star="${s}"><h4>${STAR_LABELS[s]}</h4>`;
     list.forEach(c=>{
-      html+=`<div class="case-row" onclick="teacherCase('${c.id}')">
+      const sTxt=esc((c.code||"")+" "+(c.title||"")+" "+(STAR_LABELS[c.star]||""));
+      html+=`<div class="case-row" data-s="${sTxt}" onclick="teacherCase('${c.id}')">
         <span class="code">${esc(c.code)}</span><span class="t">${esc(c.title)}</span>
         <button class="assign-btn" onclick="event.stopPropagation();assignCase('${c.id}')">📤 指定給學生</button>
         <span class="answer-flag">🔑 含解答</span><span class="go">›</span></div>`;
@@ -1146,6 +1147,17 @@ function teacherRole(id){
   window.scrollTo(0,0);
 }
 function assignCase(id){ const c=findCase(id); if(c) popCase(c); }
+function teacherCaseFilter(q){
+  q=(q||"").trim().toLowerCase();
+  document.querySelectorAll("#teacherList .star-group").forEach(grp=>{
+    let shown=0;
+    grp.querySelectorAll(".case-row").forEach(row=>{
+      const t=(row.dataset.s||"").toLowerCase();
+      const hit=(!q||t.indexOf(q)>=0); row.style.display=hit?"flex":"none"; if(hit) shown++;
+    });
+    grp.style.display=shown?"block":"none";
+  });
+}
 function teacherCase(id){  const c=findCase(id), s=c.student, t=c.teacher;
   const d=document.getElementById("teacherDetail");
   document.getElementById("teacherList").style.display="none"; d.style.display="block";
