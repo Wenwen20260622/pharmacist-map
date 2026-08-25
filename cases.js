@@ -7,8 +7,20 @@ window.GAME_DATA_CASES = [
     "student": {
       "patient": "魯先生，曾發生心肌梗塞並放置冠狀動脈支架，目前規律服用 Clopidogrel 預防再次發病。\n病人近期抱怨胸口灼熱、胃酸逆流，醫師診斷為胃食道逆流（GERD）。",
       "context": "",
-      "rx": "Esomeprazole 40mg/Tab 1Tab QD",
+      "rx": "",
       "evidence": "PPI 與 clopidogrel 的交互作用具臨床意義：clopidogrel 是前驅藥，主要經 CYP2C19 活化；而 omeprazole、esomeprazole 等會強力抑制此酵素，可能降低 clopidogrel 的抗血小板效果，增加心肌梗塞、缺血性中風等心血管事件風險。相關指引建議：對有腸胃道出血高風險、又在使用雙重抗血小板治療的病人可用 PPI 保護腸胃，但應避免強力抑制 CYP2C19 的 PPI（如 omeprazole）。pantoprazole 因對 CYP2C19 抑制極小、與 clopidogrel 無明顯臨床交互作用而為首選。近期統合分析與隨機試驗顯示整體影響可能不大，且 PPI 能降低腸胃道出血風險。",
+      "rxTable": [
+        {
+          "name": "Esomeprazole 40mg/Tab",
+          "dose": "1",
+          "doseUnit": "Tab",
+          "usage": "QD AC",
+          "route": "PO",
+          "total": "28",
+          "totalUnit": "Tab",
+          "days": "28"
+        }
+      ],
       "refs": [
         {
           "title": "Proton Pump Inhibitor and Clopidogrel Interaction: Fact or Fiction?",
@@ -719,7 +731,8 @@ window.GAME_DATA_CASES = [
           "用藥方法",
           "特別用藥指示",
           "健保價格",
-          "自費價"
+          "自費價",
+          "健保給付規定"
         ]
       }
     },
@@ -732,6 +745,140 @@ window.GAME_DATA_CASES = [
       "chips": [
         "- 若藥師未計算總量直接發藥，導致醫院被健保局核刪罰款，扣除紅籌碼（藥費）4 枚。",
         "- 若藥師成功擋下並建議「一瓶健保、一瓶自費」，完美平衡病人需求與醫院財務，不扣籌碼，獎勵紅籌碼 1 枚。"
+      ]
+    }
+  },
+  {
+    "id": "case-1787640657136",
+    "code": "CASE-015",
+    "title": "GLP-1 (易週糖) 全球缺貨（供應鏈崩潰）",
+    "star": "special",
+    "student": {
+      "patient": "辜先生，60 歲。第二型糖尿病患者，合併有肥胖問題（BMI 32）。\n醫師為了同時控制血糖並協助病人減重，開立了每週注射一次的 GLP-1 促效劑。\n\n「臨床時事」——GLP-1 針劑因全球減重熱潮，目前處於全台大缺藥狀態，醫院庫存為零。",
+      "context": "",
+      "rx": "",
+      "evidence": "",
+      "rxTable": [
+        {
+          "name": "Dulaglutide INJ. 1.5MG",
+          "dose": "1",
+          "doseUnit": "dose",
+          "usage": "QW",
+          "route": "SC",
+          "total": "1",
+          "totalUnit": "Tube",
+          "days": "28"
+        }
+      ],
+      "refs": [
+        {
+          "title": "易週糖 FDA缺藥公告範例.pdf",
+          "url": "https://drive.google.com/file/d/1V9FqHunNxL0PNwQlfvSW8UmaBABs_d5L/view?usp=drive_link"
+        },
+        {
+          "title": "易週糖 醫院缺藥公告範例.JPG",
+          "url": "https://drive.google.com/file/d/1C0Z1lbt4sZS4-s9k9wWqv0s6szo3wToF/view?usp=drive_link"
+        },
+        {
+          "title": "西藥醫療器材供應資訊平台-易週糖.pdf",
+          "url": "https://drive.google.com/file/d/1tcIEz1BX5cnQ0SigOb1u4b3xTyYRNYKz/view?usp=drive_link"
+        },
+        {
+          "title": "衛福部食藥署「西藥供應資訊平台」建議使用替代藥品或其他建議",
+          "url": "https://dsms.fda.gov.tw/DrugList.aspx?s=3"
+        }
+      ],
+      "drugInfo": {
+        "drugs": [
+          "Semaglutide 1mg/Dose 4Doses/syr.",
+          "Semaglutide 2.4mg/Dose 4Doses/syr.",
+          "Semaglutide長效 4mg/3mL/Pen",
+          "Dapagliflozin 10mg/Tab",
+          "Empagliflozin 10mg/Tab",
+          "Empagliflozin 25mg/Tab",
+          "Semaglutide 14mg/Tab(30顆/盒)",
+          "Semaglutide 7mg/Tab(30顆/盒)"
+        ],
+        "fields": [
+          "成分及含量",
+          "藥品手冊適應症",
+          "成人常用劑量說明",
+          "貯藏方式",
+          "用藥方法",
+          "特別用藥指示",
+          "健保價格",
+          "自費價",
+          "健保給付規定"
+        ]
+      }
+    },
+    "interactions": [],
+    "interactionImage": "",
+    "teacher": {
+      "review": "實習生必須掌握近期的「臨床時事」——GLP-1 針劑因全球減重熱潮，目前處於全台大缺藥狀態，醫院庫存為零。",
+      "risk": "若不主動聯絡醫師更改處方，病人到領藥櫃檯才發現沒藥，會引發嚴重的醫病衝突與客訴，且病人當天的治療計畫將被延誤。",
+      "planB": "-藥理替代：建議醫師改開立同樣具備心血管保護與減重效益的 SGLT2 抑制劑（如 Empagliflozin 或 Dapagliflozin）。\n-同類替代：若醫師堅持使用 GLP-1，建議改用目前庫存相對穩定的口服劑型（如 Rybelsus; 瑞倍適）。",
+      "chips": [
+        "- 若藥師未查庫存直接過卡，導致前線櫃台被病人大罵，扣除綠籌碼（健康度）3 枚。",
+        "- 若藥師即時介入並成功建議替代藥物（如 SGLT2i），因為替代藥物也具備療效，不扣額外籌碼。",
+        "- 難點解析：考驗時事敏感度與臨床應變。沒藥就是沒藥，必須從藥理機轉出發，找出能兼顧降糖與減重心血管效益的替代品 (如 SGLT2i)。"
+      ]
+    }
+  },
+  {
+    "id": "case-1787641843630",
+    "code": "CASE-016",
+    "title": "PPI 健保給付規範（沒做胃鏡的代價）",
+    "star": "special",
+    "student": {
+      "patient": "范先生，63 歲。長期服用 Aspirin (Bokey; 伯基) 預防心血管疾病 ，近期抱怨上腹部疼痛。\n醫師懷疑是 NSAID 引起的消化性潰瘍。",
+      "context": "",
+      "rx": "",
+      "evidence": "",
+      "rxTable": [
+        {
+          "name": "Rabeprazole 20mg/Tab",
+          "dose": "1",
+          "doseUnit": "Tab",
+          "usage": "QD",
+          "route": "PO",
+          "total": "28",
+          "totalUnit": "Tab",
+          "days": "28"
+        }
+      ],
+      "refs": [
+        {
+          "title": "Chap7_腸胃藥物.pdf",
+          "url": "https://drive.google.com/file/d/1Xtw22bcP87p0Hm334URYCXvy9TtmfLRg/view?usp=drive_link"
+        }
+      ],
+      "drugInfo": {
+        "drugs": [
+          "Famotidine  20mg/Tab",
+          "Rabeprazole 20mg/Tab"
+        ],
+        "fields": [
+          "成人常用劑量說明",
+          "貯藏方式",
+          "用藥方法",
+          "健保價格",
+          "自費價",
+          "健保給付規定"
+        ]
+      }
+    },
+    "interactions": [],
+    "interactionImage": "",
+    "teacher": {
+      "review": "實習生必須對「健保給付規範（行政端）」有敏感度。",
+      "risk": "氫離子幫浦抑制劑 (PPI) 的單價較高，健保局規定必須附有近期（通常為 4 個月內）的「胃鏡檢查報告」證實有潰瘍或逆流性食道炎，才能以健保身分給付。若無報告而開立，將面臨 100% 健保核刪，並可能放大回推罰款。",
+      "planB": "- 先查詢系統：確認病人近期是否有做過胃鏡。\n- 替代方案：若無胃鏡報告，且病人拒絕照胃鏡，建議醫師改開立不需胃鏡報告的 H2-blocker（如 Famotidine）或一般制酸劑 。\n- 自費方案：若醫師評估強烈需要 PPI，提醒醫師改為「自費處方」，讓病人自費購買。",
+      "chips": [
+        "- 若藥師未察覺健保規範，導致醫院遭健保局放大核刪，扣除紅籌碼（藥費）4 枚。",
+        "- 若藥師建議改用 H2-blocker，扣除綠籌碼（健康度）1 枚（因 H2-blocker 療效稍弱於 PPI），但不扣藥費。",
+        "- 若藥師建議轉自費，不扣籌碼（完美平衡療效與醫院預算）。",
+        "- 難點解析：純粹的行政與健保核刪陷阱。藥理完全正確，但程序錯誤。能讓學生深刻體會「不是藥開對了就好，還要符合健保局的遊戲規則」。"
       ]
     }
   }
