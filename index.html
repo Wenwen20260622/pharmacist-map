@@ -797,7 +797,19 @@ window.__SEED__ = /*SEED_START*/{
 }/*SEED_END*/;
 </script>
 <script src="data.js" onerror="void 0"></script>
-<script>window.GAME_DATA = window.GAME_DATA || window.__SEED__;</script>
+<script src="base.js" onerror="void 0"></script>
+<script src="cases.js" onerror="void 0"></script>
+<script>
+(function(){
+  var seed = window.__SEED__;
+  var old  = window.GAME_DATA;               // 舊的合併檔 data.js（若還在）
+  var base = window.GAME_DATA_BASE || old || seed;
+  var cases = window.GAME_DATA_CASES || (old && old.cases) || seed.cases;
+  window.GAME_DATA = {
+    config: base.config, fields: base.fields, drugs: base.drugs, roles: base.roles, cases: cases
+  };
+})();
+</script>
 
 <div class="topbar">
   <div class="brand"><span class="cross"></span><span>醫藥先鋒</span></div>
@@ -852,11 +864,13 @@ window.__SEED__ = /*SEED_START*/{
       <div id="edRoles" style="display:none"></div>
       <div id="edDrugs" style="display:none"></div>
       <div class="ed-actions">
-        <button class="btn-export" onclick="exportData()">⬇ 匯出 data.js（更新後上傳 GitHub）</button>
+        <button class="btn-export" onclick="exportCases()">⬇ 匯出案例 cases.js（常用）</button>
+        <button class="btn-export" style="background:var(--wood)" onclick="exportBase()">⬇ 匯出角色與藥品 base.js（少用）</button>
       </div>
       <div class="note">
-        更新內容的流程：在這裡新增或修改 → 按「匯出 data.js」下載檔案 → 把檔案上傳到你的 GitHub 專案覆蓋舊的 data.js。
-        重新整理網頁後，學生版、老師後台、抽卡畫面都會同步更新，你完全不用碰程式碼，也不用一個一個貼連結。
+        資料拆成兩個檔案：<b>cases.js</b> 裝案例（小、常改），<b>base.js</b> 裝角色與藥品（大、少改）。
+        改了案例 → 按「匯出案例 cases.js」→ 上傳 GitHub 覆蓋 cases.js。改了角色或藥品 → 按「匯出角色與藥品 base.js」→ 上傳覆蓋 base.js。
+        平常你只會用到 cases.js，檔案小、上傳快又穩。重新整理網頁後全部同步更新。
       </div>
     </div>
   </section>
@@ -1203,7 +1217,7 @@ function renderDrugsTab(){
   box.innerHTML=`
     <label style="display:block;font-weight:700;color:var(--green-d);margin-bottom:6px">從 Excel 匯入藥品資料庫</label>
     <input type="file" accept=".xlsx,.xls" id="drugXlsx" onchange="importDrugsXlsx(event)">
-    <div class="note" style="margin-top:10px">選擇你的藥品 Excel（第一列是欄位名稱、每列一支藥、第一欄是藥品學名）。匯入會用新檔覆蓋整份藥品資料庫，各狀況題原本勾選的藥品若學名一致會自動接上。匯入後記得按下方「匯出 data.js」保存。</div>
+    <div class="note" style="margin-top:10px">選擇你的藥品 Excel（第一列是欄位名稱、每列一支藥、第一欄是藥品學名）。匯入會用新檔覆蓋整份藥品資料庫，各狀況題原本勾選的藥品若學名一致會自動接上。匯入後記得按下方「匯出角色與藥品 base.js」保存。</div>
     <div style="margin-top:16px;font-weight:700;color:var(--green-d)">目前資料庫：${(DATA.drugs||[]).length} 支藥、${(DATA.fields||[]).length} 個欄位</div>
     <div class="ed-list" style="margin-top:10px">${(DATA.drugs||[]).map(d=>`
       <div class="drug-db-item"><span class="dn">${esc(d["中文名稱"]||"")}</span>
@@ -1227,7 +1241,7 @@ function importDrugsXlsx(e){
         drugs.push(d);
       });
       DATA.fields=headers; DATA.drugs=drugs;
-      alert("匯入成功：共 "+drugs.length+" 支藥、"+headers.length+" 個欄位。別忘了按「匯出 data.js」保存。");
+      alert("匯入成功：共 "+drugs.length+" 支藥、"+headers.length+" 個欄位。別忘了按「匯出角色與藥品 base.js」保存。");
       renderDrugsTab();
     }catch(err){ alert("匯入失敗，請確認是有效的 Excel 檔。\n"+err.message); }
   };
@@ -1238,7 +1252,7 @@ function renderEditor(){
   const ec=document.getElementById("edCases");
   ec.innerHTML=`<button class="btn-save" onclick="edNewCase()">＋ 新增狀況題</button><div class="ed-list">`+
     DATA.cases.map(c=>`<div class="ed-item"><span class="code">${esc(c.code)}</span>
-      <span class="grow">${esc(c.title)}</span><span style="color:var(--gold-d)">${STAR_LABELS[c.star]}</span>
+      <span class="grow">${esc(c.title)}</span>${c.interactionImage?`<span title="含內嵌圖片，會讓檔案變大" style="color:var(--red-d)">🖼 含圖</span>`:""}<span style="color:var(--gold-d)">${STAR_LABELS[c.star]}</span>
       <button class="btn-edit" onclick="edEditCase('${c.id}')">編輯</button>
       <button class="btn-del" onclick="edDelCase('${c.id}')">刪除</button></div>`).join("")+`</div>`;
   // 角色卡清單
@@ -1402,10 +1416,18 @@ function edSaveRole(id){
 }
 function edDelRole(id){ if(confirm("確定刪除這個角色？")){ DATA.roles=DATA.roles.filter(r=>r.id!==id); renderEditor(); } }
 
-function exportData(){
-  const txt="window.GAME_DATA = "+JSON.stringify(DATA,null,2)+";\n";
+function downloadFile(txt,name){
+  const kb=Math.round(txt.length/1024);
   const blob=new Blob([txt],{type:"text/javascript"});
-  const a=document.createElement("a"); a.href=URL.createObjectURL(blob); a.download="data.js"; a.click();
+  const a=document.createElement("a"); a.href=URL.createObjectURL(blob); a.download=name; a.click();
+  alert("已匯出 "+name+"，大小約 "+kb+" KB。請上傳到 GitHub 覆蓋同名檔案。");
+}
+function exportCases(){
+  downloadFile("window.GAME_DATA_CASES = "+JSON.stringify(DATA.cases,null,2)+";\n","cases.js");
+}
+function exportBase(){
+  const base={config:DATA.config, fields:DATA.fields, drugs:DATA.drugs, roles:DATA.roles};
+  downloadFile("window.GAME_DATA_BASE = "+JSON.stringify(base,null,2)+";\n","base.js");
 }
 
 /* =================== 啟動 =================== */
