@@ -680,5 +680,59 @@ window.GAME_DATA_CASES = [
         "- 若藥師成功跨科別攔截，守住呼吸道防線，不扣籌碼，獎勵綠籌碼 1 枚。"
       ]
     }
+  },
+  {
+    "id": "case-1787638701402",
+    "code": "CASE-014",
+    "title": "過敏季的「囤藥」陷阱（健保規範/行政防守）",
+    "star": "special",
+    "student": {
+      "patient": "近期臨床現象：過敏性鼻炎盛行，類固醇鼻噴劑（如 Avamys 艾敏釋）效果極佳，許多病人會要求醫師「多開幾支讓我帶回家放著」。\n陳先生，40 歲。長期有過敏性鼻炎，近期因換季嚴重打噴嚏就醫。他向醫師表示下個月工作會很忙沒空回診，希望一次拿足藥量。",
+      "context": "",
+      "rx": "FLUticasone nasal spray 120doses/Bot 2 puff QD 總量共2 瓶",
+      "evidence": "",
+      "rxTable": [
+        {
+          "name": "FLUticasone nasal spray 120doses/Bot",
+          "dose": "2",
+          "doseUnit": "puff",
+          "usage": "QD",
+          "route": "INHL",
+          "total": "2",
+          "totalUnit": "BT",
+          "days": "28"
+        }
+      ],
+      "refs": [
+        {
+          "title": "chap6_呼吸道藥物.pdf",
+          "url": "https://drive.google.com/file/d/1h78mu_0VwlUkEJR4RUaxjXNqUhhHe8fA/view?usp=drive_link"
+        }
+      ],
+      "drugInfo": {
+        "drugs": [
+          "FLUticasone nasal spray 120doses/Bot"
+        ],
+        "fields": [
+          "成人常用劑量說明",
+          "貯藏方式",
+          "用藥方法",
+          "特別用藥指示",
+          "健保價格",
+          "自費價"
+        ]
+      }
+    },
+    "interactions": [],
+    "interactionImage": "",
+    "teacher": {
+      "review": "實習生必須計算「總劑量」與審視「健保規範」。\n可以討論鼻噴劑的類型說明 院內不同的type",
+      "risk": "Avamys 每天每側 2 下 = 每天共 4 下。一瓶 120 下剛好是 30 天的用量。健保局嚴格規定，此類鼻噴劑「每次處方以一瓶為原則」，除非有特殊出國證明，否則 28 天開立 2 瓶絕對會面臨健保 100% 放大核刪，醫院將承擔龐大罰款。",
+      "planB": "-行政防守：退回處方，請醫師將健保數量改為「1 瓶」。\n-溝通方案：若病人堅持要多帶一瓶備用，建議醫師將第 2 瓶改為「全自費」開立。",
+      "chips": [
+        "- 若藥師未計算總量直接發藥，導致醫院被健保局核刪罰款，扣除紅籌碼（藥費）4 枚。",
+        "- 若藥師成功擋下並建議「一瓶健保、一瓶自費」，完美平衡病人需求與醫院財務，不扣籌碼，獎勵紅籌碼 1 枚。"
+      ]
+    }
   }
 ];
