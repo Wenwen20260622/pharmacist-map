@@ -889,6 +889,20 @@ window.__SEED__ = /*SEED_START*/{
 <script>
 /* =================== 資料與工具 =================== */
 const DATA = window.GAME_DATA;
+/* ---- 老師答案輕度編碼（防君子：讓學生翻檔案時看到亂碼） ---- */
+var ENC_KEY="med-pioneer-8f3a";
+var PW_ENC="enc:XFdWFUBYXVxSVg==";
+function _xor(s,k){var o="";for(var i=0;i<s.length;i++){o+=String.fromCharCode(s.charCodeAt(i)^k.charCodeAt(i%k.length));}return o;}
+function encTxt(s){ if(s==null||s==="") return s; try{ return "enc:"+btoa(unescape(encodeURIComponent(_xor(String(s),ENC_KEY)))); }catch(e){ return s; } }
+function decTxt(s){ if(typeof s!=="string"||s.indexOf("enc:")!==0) return s; try{ return _xor(decodeURIComponent(escape(atob(s.slice(4)))),ENC_KEY); }catch(e){ return s; } }
+function decodeTeacher(list){ (list||[]).forEach(c=>{ const t=c.teacher; if(!t) return;
+  t.review=decTxt(t.review); t.risk=decTxt(t.risk); t.planB=decTxt(t.planB);
+  if(Array.isArray(t.chips)) t.chips=t.chips.map(decTxt); }); }
+function encodeTeacher(c){ const t=Object.assign({},c.teacher||{});
+  t.review=encTxt(t.review); t.risk=encTxt(t.risk); t.planB=encTxt(t.planB);
+  if(Array.isArray(t.chips)) t.chips=t.chips.map(encTxt);
+  return Object.assign({},c,{teacher:t}); }
+let teacherAuthed=false;
 const STAR_LABELS = {1:"★",2:"★★",3:"★★★",4:"★★★★",5:"★★★★★",special:"特殊狀況"};
 const STARS = [1,2,3,4,5,"special"];
 let selectedStar = 1;
@@ -902,6 +916,12 @@ function esc(t){ return (t||"").replace(/&/g,"&amp;").replace(/</g,"&lt;").repla
 
 /* =================== 檢視切換 =================== */
 function showView(v){
+  if((v==="teacher"||v==="editor") && !teacherAuthed){
+    const p=prompt("請輸入老師密碼：");
+    if(p===null) return;
+    if(encTxt(p)!==PW_ENC){ alert("密碼錯誤"); return; }
+    teacherAuthed=true;
+  }
   document.querySelectorAll(".view").forEach(el=>el.classList.remove("on"));
   const el=document.getElementById("view-"+v); if(el) el.classList.add("on");
   document.querySelectorAll("#nav button").forEach(b=>b.classList.toggle("active",b.dataset.v===v));
@@ -1460,7 +1480,8 @@ function downloadFile(txt,name){
   alert("已匯出 "+name+"，大小約 "+kb+" KB。請上傳到 GitHub 覆蓋同名檔案。");
 }
 function exportCases(){
-  downloadFile("window.GAME_DATA_CASES = "+JSON.stringify(DATA.cases,null,2)+";\n","cases.js");
+  const enc=DATA.cases.map(encodeTeacher);
+  downloadFile("window.GAME_DATA_CASES = "+JSON.stringify(enc,null,2)+";\n","cases.js");
 }
 function exportBase(){
   const base={config:DATA.config, fields:DATA.fields, drugs:DATA.drugs, roles:DATA.roles};
@@ -1469,6 +1490,7 @@ function exportBase(){
 
 /* =================== 啟動 =================== */
 (function init(){
+  decodeTeacher(DATA.cases);
   const p=new URLSearchParams(location.search);
   const view=p.get("view");
   if(view==="student"){ renderStudent(p.get("type"),p.get("id")); return; }
