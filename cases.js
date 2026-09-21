@@ -76,12 +76,12 @@ window.GAME_DATA_CASES = [
     ],
     "interactionImage": "",
     "teacher": {
-      "review": "實習生必須抓出 Esomeprazole 會強烈抑制 CYP2C19 酵素活性。",
-      "risk": "Clopidogrel 需經 CYP2C19 代謝才有活性。併服 Esomeprazole 會導致 Clopidogrel 療效大幅降低，增加心血管血栓風險。",
-      "planB": "（關鍵考點）不能只說「不能用 PPI」，而要精準提出：改用對 CYP2C19 幾乎無影響的 Pantoprazole（保衛康），或改用 H2-blocker（如 Famotidine）。",
+      "review": "enc:5a6L576355W75b+o6aG45ou65YaVTiAWHUBdFkEAFwoISFDmnarlvZjngqbmi7TliZNSbmE2ASJcXETphZjntZDmtZLmgYjjgaw=",
+      "risk": "enc:LgkLXRkNAAkXAB4N6Zy457e1EyI0NVZuQVBP5LqN6K245oio5p275rSW5oCf44Gk5L2G5p2sTSAXQh0MHxwEHx1BXUbmnLDlsa/ohplFJ0EfGQYKCgIASFRG55mx5pSp5aWK5big6Zip5L2j77285aO35YuP5b6t6KCl56+E6KCy5qC+6aKQ6ZuM44Cx",
+      "planB": "enc:772l6Za56YyR6ICu6bqu772g5Lmi6IKT5Y6P6KuP44G+5Lig6IOF55WOEzE9LOOBqe+8oeiBvOinqOezkea7uOaOteWGn++9qOaUlOeUkOWxqxMiNDVWbkFQT+W4kOS4q+eFhOW8g+mfkueavEZjAAMRC10CCBUBCQDvvbrkv7DooaPlu5HvvLrvva3mibvmlZznlYwNOFtCDAkKEUZdFO+8u+Wno00jBUAfHQYKDAsX77yk44C6",
       "chips": [
-        "若藥師未發現而照發藥品，後續將引發心肌梗塞，扣除綠籌碼（健康度）5 枚。",
-        "若成功提出 Pantoprazole 的精確替代方案，因藥價可能微幅變動，扣除紅籌碼（藥費）2 枚。"
+        "enc:6IqI6JaA5bmP5pyH55iM546X6IGj54SJ55iZ6JaA5ZKz77yh5b6057uq5bC05b2055iR5b6m6IOo5qK65aCu772l5oiM6ZiK57eF57Cp56OO77yl5YGd5buR5bqV772oWEXmn77jgK8=",
+        "enc:6IqI5om15Yu75o+95YaKST8PCxEdXUoHSQ4BAETnmqnns47no5PmmpDkuo3ml5zmoK3vvb7lm43ol53lgp/lj5zogpzlv4PluKDor67li7jvvbzmiIrpmIvntavnsKnno5nvvbrol4josoPvva8BQeaft+OBpw=="
       ]
     }
   },
@@ -95,6 +95,18 @@ window.GAME_DATA_CASES = [
       "context": "",
       "rx": "Atorvastatin 20mg/Tab 1tab QD",
       "evidence": "",
+      "rxTable": [
+        {
+          "name": "Atorvastatin 20mg/Tab",
+          "dose": "1",
+          "doseUnit": "tab",
+          "usage": "QD",
+          "route": "PO",
+          "total": "28",
+          "totalUnit": "tab",
+          "days": "28"
+        }
+      ],
       "refs": [
         {
           "title": "CYP3A4和CYP2D6影響的藥品",
@@ -136,14 +148,14 @@ window.GAME_DATA_CASES = [
     ],
     "interactionImage": "",
     "teacher": {
-      "review": "實習生必須抓出 Atorvastatin 在體內主要是經由腸道與肝臟的 CYP3A4 酵素代謝 。",
-      "risk": "葡萄柚汁含有強烈抑制 CYP3A4 酵素的成分。若併服會抑制 Atorvastatin 的代謝，使藥物血中濃度大幅增加，極易引發肌肉毒性，嚴重甚至導致橫紋肌溶解症 (rhabdomyolysis) 或急性腎衰竭 。",
-      "planB": "1. 基礎解法： 衛教病人服藥期間「絕對禁止」食用葡萄柚或葡萄柚汁。\n2. 進階解法： 若病人非常堅持想吃，建議醫師將降血脂藥物更改為幾乎不經由 CYP3A4 代謝的品項，例如 Rosuvastatin 或 Pravastatin。",
+      "review": "enc:5a6L576355W75b+o6aG45ou65YaVTiQRHV9OB0AVDBENQ1DlnYHpqrvlhInkuZ7op6TmmZ3ntr7nlInohJ7pgaDoiabog7Dohrrnm6ANMzA/XSRRUumFmOe0mOS6heisrkHjga8=",
+      "risk": "enc:6JCM6JGh5p6+5rGs5ZGb5p2g5b2Y54Km5ou05YmTUm5hNgAgWUXphJHntI3nm7TmibnlianjgazoioDkvJDmnb/mnK7miqnliZATIBkKFlsRGhsPEQwcDeeavOS6heisru+9reS8kuiWgOeIjeihreS5nea+quW7ieWlieW4oOWju+WLku+8oealjeaZteW8pueYneiDoeiDrOautuaAiu+9vOWbnemGoueVtOiGluWxq+iGhuaphue0s+iDqua6heimgueWqkVMXxgIDQoKCAtCVB9ACB5MROaIu+aBleaBjuiEoeignueqiEXjgbA=",
+      "planB": "enc:XEtE5Z+X56W+6KaK5rK67720ReigvuaUq+eXqOS6guadq+iXluadvumXvuOBqee0seWwoOenseasi+OBoumiseeVjeiQhOiRtuaft+aIruiQh+iQt+aeu+awrOOBp24fXknpgZ3pm6DopobmsrDvvagN6Iud55aj5LqJ6Zy/5bmV5aGg5o2l5oOe5ZGz772l5bqV6Kye6YeO5bmO5bG16Zmg6KG46IWk6JeW54iI5pqZ5pWc54Oe5bmT5Li+5Lmk57e855WfRSYrfQsnB0Hkuo7orbjnm6Dlk6zpobXvvaXkv6Tlp6xFNx1eTRBSEhkEEEQeSeaJuU41FxNbWRVHABkMCuOArw==",
       "chips": [
-        "-若藥師未發現而照發藥品且未衛教，病人一週後因全身肌肉劇痛掛急診，扣除綠籌碼（健康度）5 枚。",
-        "-若藥師成功攔截並衛教病人禁食葡萄柚，不扣額外籌碼。",
-        "-若藥師建議「更換不受影響的 Statins」，展現極高專業度，獎勵綠籌碼（健康度）1 枚（病人滿意度提升）。但因變更藥品，藥價可能微幅變動，扣除紅籌碼（藥費）1 枚。",
-        "- 難點解析：國考必考的經典 CYP3A4 食物交互作用。重點在於測驗藥師「有沒有記得開口做衛教」。"
+        "enc:QOiKgOiWgeW4huadmueYleeOkeiBoueEgueYmeiWl+WTrOS4rOadjOihqOaUuO+9oeeWoOS7nuS4remBgeW/peWaj+WEhui7juiDqeiDu+WKqueXo+aPveaAluipm++9oeaIhumYgOe2jeewvOejle+9p+WAi+W7kuW7g++9uxgY5p+844Cx",
+        "enc:QOiKgOiWgeW4huaJoOWLtuaVu+aJhOS5g+igvuaUq+eXqOS6guenp+mjrOiQgOiRqeaev++9qOS4oOaIk+mgpOWlueewouejmeOBpw==",
+        "enc:QOiKgOiWgeW4huW6iuismeOBo+aamuaOvuS5qOWOpeW9nOmfh+ebohMyGQQQRB4a44Gi772i5bCw546b5qSH6au15bCw5qSL5bqV772t54yj5YqQ57eE57Gh56OM772h5YCK5buZ5buD772sQw3mnqLvva7nl7bku5vmupLmharlu4Lmj73ljLfvvaDjga3kvKjlmoXor6/mmobol4jlk7nvvarol5blgpjljoLogpjlv4rluajor7rlirzvvaPmiI3pmIHntaDnsL7nopHvvLDoloPosojvvahcReafvuOArw==",
+        "enc:QEXpmofpu7PoppPmn7nvvbXlnaXogablvqDogbHnmqnntqvlhJ4TIjQ1V2xESemisOeIh+S7geS7t+S8rueUheOAuumGq+m7reWdieaXkea5iemos+iXiOW5m+OBpeadpuazvOadrOipveW/pemWpuWPm+WAvOihqOaUuOOBoOOBpw=="
       ]
     }
   },
@@ -157,6 +169,18 @@ window.GAME_DATA_CASES = [
       "context": "",
       "rx": "MethylPhenidate ER 36mg/Tab 1Tab 咬碎/剝半 於傍晚 6 點服用。",
       "evidence": "",
+      "rxTable": [
+        {
+          "name": "MethylPhenidate ER 36mg/Tab",
+          "dose": "1",
+          "doseUnit": "tab",
+          "usage": "QD",
+          "route": "PO",
+          "total": "28",
+          "totalUnit": "tab",
+          "days": "28"
+        }
+      ],
       "refs": [
         {
           "title": "藥品仿單：Concerta (專思達) 中文仿單（特別標註 OROS 滲透壓技術與「必須整粒吞服」之警語）",
@@ -189,14 +213,14 @@ window.GAME_DATA_CASES = [
     "interactions": [],
     "interactionImage": "",
     "teacher": {
-      "review": "實習生必須敏銳識別出 Concerta 是採用高科技的 OROS（滲透壓控制釋放）專利技術。",
-      "risk": "- 劑量傾瀉 (Dose Dumping)：OROS 劑型絕對不可咬碎、切半或磨粉。一旦破壞外殼，原本設計要在 12 小時內緩慢釋放的藥物，會在一瞬間全部進入血液，導致嚴重的藥物過量（極度焦慮、血壓狂飆），且下午藥效退去後會產生嚴重的「崩潰感 (Crash)」。\n- 嚴重失眠：傍晚服用長效興奮劑，會導致整夜無法入睡，隔天精神更差，完全本末倒置。",
-      "planB": "1. 衛教防守：嚴格糾正服藥觀念，強調 Concerta 必須「整粒吞服」，且務必在「早上」服用。\n2. 劑型替代：若林同學「真的吞不下去」，建議醫師改開立短效的 Ritalin (利他能，可剝半)，或是新型的長效膠囊 Methydur (思有得，可打開膠囊將藥粒撒在布丁或蘋果泥上吞服，但同樣不可咬碎裡面的微粒)。",
+      "review": "enc:5a6L576355W75b+o6aG45pSm6Yuc6Ky25YmA5YafUm5XCFAEHxEFDeaZn+aPiOeVh+mqtuemtOaLpeebtg13NHwy772l5rqX6YGr5aO+5o+X5Ymf6Yak5pWQ772s5bGt5Ymb5oqt6KGr44Gk",
+      "risk": "enc:QEXli7Xph6Llg47ngaBPRiEKAUgYIkYMHQwKSlnvvbMgPCo2UuWKvOWes+e0s+WwvuS5rOWOguWTieejquOArOWJt+WMo+aJueeihuezrOOBp+S5suaXi+egjOWiuOWkpeavne+9oeWPuuadiOiogOipuOinqOWdh05UV1LlsKLmmbrlhIHnt5rmhIPphqbmlZvnm6Dol4jniJnvvaXmnazlnYbkuaXnn4npl6HlhYXpg5DpgZTlhZbooKHmt5/vvanlsaroh5nlm4TphqTnm6volovniIzpgKvphr3vvKXmpY3lu4DnhJXmhI/jgazooKXlorfni6/porbvvaDvvaPkubrkua7ljK3olpfmlaXpgLjlj53lvr/mnaLnlY/nlbrlm5Dph6Dnm7TjgaXltYbmvJ7mhbpFWm5KB0AJROOBqOOBpiddSeWbm+mGo+WllOedhe+9qOWCoOaZouadq+eUm+mUluaUpeiJreWkiuWKvO+9vOadquWxoeiGmuaUkeWlueeFk+azuOWFneech++8v+mbteWlhOezm+ekuuabmeW2nu+9peWvo+WEhuadieadjuWBoOe9g+OAug==",
+      "planB": "enc:XEtE6KG25pSp6Zmb5a+n77205ZuR5qGZ57KM5q2O5py16JaD6Kez5b6U772h5b2S6KubDTMGAQ0AFwZMGOW+o+mgu+OBreaUmeezt+WRuuacoOOBve+9peS5u+WKt+W+oOWdjeOBvuaXhOS4suOBq+acvueVieOBr29WA1Dli7jln6TmmpHkuobvvb/oipfmnrrlkLTlrJ7jgL/nnb7nm6nlkbvkuankuKblj4vjgaTvvaPlupTorJXph47luZnmlJTplrPnqq3nn57mlKnnm6lFNkQECAMHC0Va5YiE5Luu6IKb77y/5Y6O5Yiw5YyvTe+8oeaJpuaZhuaXn+WfpeeboemUkuaUuuiGjeWbskZ+BBkNHUkFG09G5oG45p2s5b+l77yh5Y+X5oi16Za46IeB5Zqn5bGi6JaB57K/5pOi5Z2B5bms5Lmv5omz6Jmu5p+u5rOI5Liy5ZG45py+772t5Lyr5ZGp5qmH5Lig5Y6f5ZOF56Oh6KKP6ZyH55uh5b+c57K/EeOBpA==",
       "chips": [
-        "- 若藥師未進行劑型衛教，放任學生咬碎吃，導致學生考前因心悸與極度焦慮掛急診，扣除綠籌碼（健康度）5 枚。",
-        "- 若藥師成功糾正服藥時間與方法，不扣籌碼。",
-        "- 若藥師主動建議醫師將處方更改為「可打開撒在食物上」的 Methydur (思有得膠囊)，完美解決吞嚥困難的問題，獎勵綠籌碼 1 枚（展現對藥物劑型的深度掌握！）。",
-        "- 難點解析：劑型學 (OROS 滲透壓) 的基礎應用。學生必須立刻察覺「不可咬碎」，主要考驗衛教觀念的糾正"
+        "enc:QEXoioHol4jluZvmnYPpgZ3ooKLli7Tln67ooKnmlbTvvLTmlZjku4jlrJnnlbLlk4nno6rlkK7vvbzlsafohpvlrJbnlbrogabliL/lm43lv7vmg57oiLTmpJTlu4vnhYPmhIrmjrbmgZXoqZPvvaPmiI3pmIHnt4XnsL7nopHvvLDlgIPluoTlu4fvvaRQROaet+OBsg==",
+        "enc:QEXoioHol4jluZvmibnli7DnspDmrIbmnajolpfmma/plqvoiaHmlormsrTvvaHkuajmiIfnsaHno4zjgas=",
+        "enc:QEXoioHol4jluZvkuZLlirrlupTorJXph47luZnlsKroma3ml5/mm4fmlZjng5fjganljovmib7pl7vmk7vlnYfporHniIzkua/jgb/nmqkYK1YVBRwAWAJJR+aBs+adrOW/suiHkuWbpxHvvarlrr/nv6/opo7msJ/lkbrlmojlmoDpmornm6vllKHpoKnvvannjLzli5jntpjnsKrnoo9BXEXmn77vvKXlsKXnjpflsaLolovniIzli7Tln7nnmqnmt4nlu4Dmjr/mjoDvvazvvazjgaY=",
+        "enc:QEXpmofpu7PoppPmn7nvvbXli7/ln67lrJ1SBXc0fDJN5rqX6YGr5aO+WUnnm6vlnpTnpavmhqznlZrjgK/lrYDnlbnlv7bpoannqqbliZ7lrrvoppfjgbzkuaTljoDlk4Lno6vjgajvvb7kuJboprnogaXpqaTooLrmlLTopqXlvpHnmqnnso7mrIo="
       ]
     }
   },
@@ -210,6 +234,18 @@ window.GAME_DATA_CASES = [
       "context": "",
       "rx": "Acetaminophen 500mg/tab 1tab QID",
       "evidence": "",
+      "rxTable": [
+        {
+          "name": "Acetaminophen 500mg/tab",
+          "dose": "1",
+          "doseUnit": "tab",
+          "usage": "QID",
+          "route": "PO",
+          "total": "28",
+          "totalUnit": "tab",
+          "days": "7"
+        }
+      ],
       "refs": [
         {
           "title": "普拿疼伏冒熱飲散劑加強配方-衛署藥製字第050881號-仿單",
@@ -233,12 +269,12 @@ window.GAME_DATA_CASES = [
     "interactions": [],
     "interactionImage": "",
     "teacher": {
-      "review": "實習生必須立刻計算 Acetaminophen 的「每日最高安全劑量（4000mg）」",
-      "risk": "醫師開的處方已經是一天 2000mg。市售的綜合感冒藥或熱飲，幾乎都含有高劑量的 Acetaminophen。如果李同學把診所的藥和自己買的成藥一起吃，極容易超過每日 4000mg 的上限，引發猛爆性肝炎（肝毒性）。",
-      "planB": "強烈阻止病人：「診所的藥已經有退燒成分了，你買的熱飲絕對不能再一起喝！」",
+      "review": "enc:5a6L576355W75b+o6aG456qi5YmU6Kmm56+yRTNOXRJSDAQLC10YDAFO55uh44Gp5q695peI5py46aq+5a665YSJ5Yu86Yaq772sGUBZXwMC772s44G/",
+      "risk": "enc:6YeG5bmO6Zev55qp6Jil5peQ5bad57e95pmK5Lml5aWbDQpWA1EAAuOBpuW4r+WVnuebree3s+WRpuaFuuWHt+iWl+aIu+eGiemilO+8v+W4n+S4o+mCmOWRj+acpOmqqOWLuOmGoOebqkUkEUhMB14IAwoURRUH44Gt5aes5p+55pyr5ZG+5a2V5oqy6Kmc5omz55ul6JaI5ZOp6IaO5bec6LOH55ut5om/6JaL5Lml6LSS5ZGx77yh5qWN5a+f5pig6Lek6YCj5q6q5paBDURZX14IAlLnmqnkuLLpmLbvvL/lvbTnmJHnjb7niaLmgIrog63ng6fvvafog7PmrrfmgYLvvbvjgK8=",
+      "planB": "enc:5b2a54Kt6Zmf5q2P55a15LuT772144Gi6Kmf5oil55u26JeI5beK57e15py66YGh54a/5om15Ymi5Lqr77285LyJ6LOY55uq54eU6aKX57Sn5bCg5Li16IKb5Ya+5Lmh6LSa5Ze4772l44Cg",
       "chips": [
-        "- 若藥師回答「可以啊，多喝水就好」，導致學生肝指數飆高，扣除綠籌碼（健康度）3 枚。",
-        "- 若藥師立刻制止重複用藥，不扣籌碼。"
+        "enc:QEXoioHol4jluZvlmrfnrLvjgaLljorkuoDllLjvvKHlpKLll7vmsIflsZDlpJDjgajvvajlsKPohoTlrJHnlbDog7PmjaLmlJ3porTpq7XvvLTmiIXpmZfnt4HnsKHno5nvvazlgYjlu4flu4/vvaZdReafv+OBsA==",
+        "enc:QEXoioHol4jluZvnqqLliZTliZjmrIfphqjopbXnlIXol53vvarkuL7miILnsKHno5njgaY="
       ]
     }
   },
@@ -252,6 +288,28 @@ window.GAME_DATA_CASES = [
       "context": "",
       "rx": "Ciprofloxacin 500mg/tab 1tab BID \nTopaal(Algitab) chewable Tab(複方) 1tab TID。",
       "evidence": "",
+      "rxTable": [
+        {
+          "name": "Ciprofloxacin 500mg/tab",
+          "dose": "1",
+          "doseUnit": "tab",
+          "usage": "BID",
+          "route": "PO",
+          "total": "14",
+          "totalUnit": "tab",
+          "days": "7"
+        },
+        {
+          "name": "Topaal(Algitab) chewable Tab(複方)",
+          "dose": "1",
+          "doseUnit": "tab",
+          "usage": "TID",
+          "route": "PO",
+          "total": "21",
+          "totalUnit": "tab",
+          "days": "7"
+        }
+      ],
       "refs": [
         {
           "title": "Algitab 仿單",
@@ -304,16 +362,16 @@ window.GAME_DATA_CASES = [
     ],
     "interactionImage": "",
     "teacher": {
-      "review": "Ciprofloxacin 遇多價陽離子（鋁、鎂、鈣、鐵）會產生「螯合作用 (Chelation)」，導致抗生素在腸道沉澱，吸收率大幅下降而失效。",
-      "risk": "發藥時強制衛教：「抗生素與胃藥必須『錯開至少 2 小時』服用。或更換胃藥」",
+      "review": "enc:LgwUXx8PAwEdBBFEVkbpgbTlpbvlgpTpmJjpmoblrb3vvbjpiqjjga7pj6zjgaTpiYbjgbPpkJjvvLHmnaXnlJHnlb7jgaHon4rlkazkvbHnlZhJRy0NAB5MTA9cD0TjgajvvajlsKPohoTmi77nlbDntY7lnY3ohJ3pgKHmsqTmvonvvarlkIvmlZfnj6rlpYLluKHkuKbpmL3ogaXlpZ7mlKbjgac=",
+      "risk": "enc:55iR6JaA5pim5bya5YmG6KCy5pS2772044Gp5ouy55Wt57SN6Ii/6IKl6JeW5b6k6aGl44Gr6Y2L6Zam6IaD5bG4T1xF5bGq5piw44Ci5py155WO44Cx5om35pqZ5o6+6IKn6JeI44G9",
       "planB": "",
       "chips": [
-        "- 未衛教導致感染惡化引發腎盂腎炎，扣綠籌碼 3 枚。",
-        "- 成功衛教錯開時間，不扣籌碼，獎勵綠籌碼 1 枚。",
-        "- 可以於藥品資料中提問 碳酸鈣錠",
-        "1.當作胃藥使用：應飯後嚼碎後吞服。",
-        "2.治療高磷酸血症：請盡量磨粉或自行咬碎與飯菜、肉類、湯一起吃，使藥物能立即有效防止食物中的磷自腸胃道吸收。",
-        "- 可以於藥品資料中提問為何不使用PPI"
+        "enc:QEXmnY7oobbmlKnlsafohpvmhbHmnrbmgoTljaTlvLjnmYTohKjnm7HohK/ng6PvvanmiIfnto3nsLzno5VPXUXmn7/jgbA=",
+        "enc:QEXmibTlirLooKvmlLDpjYDpl6XmmKfpl7bvvb7kuKDmiZvnsKrnoo/vva3njKPlipDnt4TnsaHno4xJXk7mn7/jgac=",
+        "enc:QEXljovku4jml4zolozlkq7osqnml7zkuYjmjqLllaIY56OV6YWL6YmC6Y2N",
+        "enc:XEvnlJLkvbHogrPolozkvJDnlYbvvb/mhqzpop3lvqHlmoTno6jlvr/lkb/mnaDjgac=",
+        "enc:X0vms5/nma/pqqjnop7phJfooK7nlqLvvb/oqrnnm4zph7fnoo7nsrrmibfohofooKnlk4jnoqPoibfpoobojrPjga/og6zpoLvjgbPmuYLkuLjotJHlkLDvva3kvJLoloDniI3og5DnqrvljJrmnabmlKbpmZfmrIfpoq3niYTkuJXnm6Lno4TohovohJXogqbpgLflkJXmlYbjgas=",
+        "enc:QEXljovku4jml4zolozlkq7osqnml7zkuYjmjqLllaLngoLkvLPkuL7kvJ7nlYU1NGQ="
       ]
     }
   },
@@ -353,12 +411,12 @@ window.GAME_DATA_CASES = [
     "interactions": [],
     "interactionImage": "",
     "teacher": {
-      "review": "實習生必須對「含碘顯影劑」與特定藥物的關係有敏感度。",
-      "risk": "靜脈注射含碘顯影劑可能會引起急性的腎功能下降。若病人體內還有 Metformin，在腎功能變差的情況下，Metformin 無法排出，會引發極度致命的「乳酸中毒 (Lactic acidosis)」。",
-      "planB": "不用改處方，但藥師必須在藥袋上標記並衛教：「做電腦斷層的當天，以及檢查後的 48 小時內，Metformin 必須暫停服用！」待檢查後確認腎功能正常才可恢復吃藥。",
+      "review": "enc:5a6L576355W75b+o6aG45bGk44Gj5ZGF56O96aCK5byD5Yq844C16Imh54mK5a+76JaI54iM55ug6Zex5L6y5p2g5pSg5oWx5buD44Gn",
+      "risk": "enc:6Zyx6IWt5rKM5bCp5ZGb56Ox6aCA5byf5Yu05Y6K6IKP5pyu5byt6LSR5oCW5oGG55up6ISr5Yu76IOQ5Lm76Zik44Gt6IqL55ag5Luf6aqm5YWK6YK85p2vEywIEQJCAgQGAO+9qeWdjeiEvOWKsuiDheivrOW3neebpeaCqOaypOS5r++8oT0MGwgKFx9EVkbnhJLmsrTmj7/lhp/vvajmnK7lvaXnmJXmpJrlu4johpHlkJjnm7bjgKHkuYvphJ7kuJ7mrrNNTShMEx0GDUUEEURcCUAIHkzjganjgK8=",
+      "planB": "enc:5Lmg55WN5pWd6Jm45peJ772l5Lyp6JaL5bmO5b6g6aG65ZyF6Jed6KOt5Li55qm46Km15LmD6KC/5pW0772q44Gl5YC16ZqV6ISD5peS5bCW55qp55WO5aWP77y/5LqE5Y6n5quH5p6B5b6h55u0SVtWReWxquaYsOWFiu+8tCtWFQsKFkAZB0/lvqvpoa3mm47lgK7mnKDnlJDvvafjgL7lv6Tmq4/mnoDlv6jnopfoq73ohKfli7DogpPmrIbluZ3miL/lj4LmgZrlv4/lkLDoloTjga8=",
       "chips": [
-        "- 若藥師只管發藥沒做特殊衛教，阿伯做完檢查後乳酸中毒進加護病房，扣除綠籌碼（健康度）4 枚。",
-        "- 若藥師成功圈出重點並完成停藥衛教，不扣籌碼。"
+        "enc:QEXoioHol4jluZvljoPnr47nmJLoloDms7flgKjniZTmrrLooL3mlarvva3pmZLkvYrlgL7lrqHmq5Lmnozlv6PkuJ3phJ3kuYjmrqDpgJ/lipjorJHnl7bmiZ7vvaHmiIbpmIDnto3nsLzno5XvvaflgIvlu5Llu4PvvbsZGOafvOOAsQ==",
+        "enc:QEXoioHol4jluZvmibnli7Dlnablhp/phqjpuqzkuIvlrrTmibblga/oloTooLbmlLzvvajkuKDmiJPnsKXno5Pjgaw="
       ]
     }
   },
@@ -394,12 +452,12 @@ window.GAME_DATA_CASES = [
     "interactions": [],
     "interactionImage": "",
     "teacher": {
-      "review": "實習生必須了解 Rybelsus 特殊的 SNAC 吸收促進劑機轉",
-      "risk": "只要胃裡有其他藥物、食物，甚至「水喝超過 120ml (約半杯)」，該藥物的吸收率就會降至 0%，等於吃安慰劑",
-      "planB": "-必須在每天早晨第一件事（完全空腹）吃。\n-只能配「半杯白開水 (不超過 120ml)」，不能用茶或飲料。\n-吃完後「至少等待 30 分鐘」，才能吃早餐或其他任何藥物。",
+      "review": "enc:5a6L576355W75b+o6aG45Luv6KaMTjccEEhUFUYSTeeInOavrueaqVA6IS8mReWRiuaUm+S/u+mBlOWKouaovui8pA==",
+      "risk": "enc:5Y6H6Kek6IKn6KOM5p255YSf5Lq56JaL54iM44Gk6aKt54mE77y055W86IeA44Gt5rGZ5Ze46Leh6YGjUFhdXggJUgXntLzljKzmnZxI44Gg772p6KiW6JeI54iZ55ut5ZGX5pWY54+i5bGU5p2x6Zmg6IeLRgNE772h56ys5peY5ZCu5a+55oSZ5Yu+",
+      "planB": "enc:QOW+oOmhrOWcheauv+WlgOaWhuaYhuetieS5peS6hOS6pu+8sOWvquWFm+eom+iElO+9rOWRp+OAr3pE5Y6F6IKT6YSo44Gp5Yy45p2C55mF6Zet5rCHQUXkuajot6HpgaNQWF1eCAlb44Cg77y05Lmr6IOO55WJ6I2b5omz6aKW5pa044GyY0Llka3lr6nlv6njgb7oh57lsKnnrK/lvrZBXlVE5Yir6ZGo44Gk772j5oij6IKY5ZGm5pab6aS95oiu5YSQ5Lul5Lqa5Ly46JaA54iN44Cv",
       "chips": [
-        "- 若藥師只說「空腹吃」未強調水量與時間，李媽媽三個月後糖化血色素完全沒降，扣除綠籌碼（健康度）3 枚（治療失敗）。",
-        "- 若藥師完美講出「三個必須」的衛教關鍵，不扣籌碼。"
+        "enc:QEXoioHol4jluZvljoPoq4XjgaLnqJ/ohJzlkbHjgKDmnJLlvZHoqozmsZXphqLoiaLmmKbplr7vvbzmnKflq5Llq5Pkuazlga7mnbrlvqHns67ljbDoobPoiJPntY3lr6nlhIzmsr/pmL3vvaXmiIzpmIrnt4XnsKnno47vvKXlgZ3lu5HlupXvvaheReafvu+8peazi+eYq+WlnuaUue+9rOOBpw==",
+        "enc:QEXoioHol4jluZvlr6Xnv6HorbXlhp/jgankubvlgKblv73poa7jgL7nm6XooLbmlLzplrjpjZjvvbzkuaTmiIznsKLno5njgac="
       ]
     }
   },
@@ -443,12 +501,12 @@ window.GAME_DATA_CASES = [
     "interactions": [],
     "interactionImage": "",
     "teacher": {
-      "review": "兒童用藥絕對是看「體重」而非「年齡」。Ibuprofen 兒童單次劑量為 5-10 mg/kg。",
-      "risk": "11公斤的幼兒喝 5cc (100mg) 雖然在上限邊緣，但若家長多餵，極易過量引發低體溫或腸胃道不適。",
-      "planB": "攔截處方，依體重重新計算精準劑量（約 2.5 - 3 cc），並更改藥袋指示，發藥時與家長確認體重並給予專屬衛教。",
+      "review": "enc:5YS/56qA55WM6JeI57Sl5bGk5pmA552l44Gp6aqx6Ya/44Cg6IC06Zy444C/5biV6byM44Go44GmZBIcHxwKAxdDGOWEtOerluWXj+atjOWLtOmGq+eCl1BcQl9VRR9KFw1U44Gj",
+      "risk": "enc:XFTlhIjmlonnm7TluJXlhL3ll7NFUBFOGE4CUV0IAwRQ6Zq/54WZ5Z2G5Lmv6Zi16YO457eO77y05Lyg6IuW5a+X6ZSa5aW/6aWR77yh5qSF5pm66YCh6Yah5b2w55iZ5Ly86au55rqT5omw6IWL6IKi6YC+5Lmo6YCN44Cv",
+      "planB": "enc:5pW55omP6Jix5paU77285L+06aq76Yaj6Yao5peV6Km6566657KG5ruw5Yqi6Yau772l57WhRB9eXE9DRVZSTlvvva/vvL/kuYfmmpnmlZzoloHooqbmjbfnpZPvvaPnmJLoloDmmKfoibXlrpvplY/no5zoqr7pqrXphqDkuYPntILkuqXlsbjlsIXooLTmlLfjgac=",
       "chips": [
-        "- 若依系統盲目發藥，幼兒因過量導致低體溫急診，扣除綠籌碼（健康度）3 枚。",
-        "- 若藥師主動依體重重算劑量並更正藥袋，不扣籌碼，獎勵綠籌碼 1 枚（展現兒科藥師專業）。"
+        "enc:QEXoioHkvrDnsovntJjnmp3nmoDnmJnoloDvvb7luZHlharlmobpgb3phq7lsaPohpHkvKrpq7nmu5vmgYzoqZXvvaLmiIbpmIHnt5LnsaHnooTvva7lgZblu5blu4vvvaxXDeafquOBqw==",
+        "enc:QEXoioHol4jluZvkuZLlirrkv7PpqrHphqjphr/nrrrliqnphqnkuJXmmpXmrI7oloDoo6/vvKHkub3miIrnsKPno5LvvannjKvliofnto3nsbTno5oTUE3mn7/vvazlsbjnjo7lhLvnpr7olovluY7lsa3mpJ/vvKTjgLo="
       ]
     }
   },
@@ -489,11 +547,11 @@ window.GAME_DATA_CASES = [
     "interactionImage": "",
     "teacher": {
       "review": "",
-      "risk": "在 CKD 病人體內會累積，導致嚴重且長期的致命性低血糖，老人家極易在半夜昏迷休克",
-      "planB": "建議改用不需依腎功能調整劑量的 DPP-4 抑制劑（如 linagliptin/Trajenta）",
+      "risk": "enc:5Z2FRSdmNEnnlqrku5TpqrHlhILmnbHntILnqbXvvarlsL3ohpXlm5nphqjkubDplZrmna/nm63ohpvlkJPmgYLkvKvooLLns7vvvLTogafkuonlr5fmpJjmmbblnYzljaflpazmmabovpjkvb/lhK4=",
+      "planB": "enc:5bqX6KyV5pWd55SF5Lm96Z2p5L+y6ISg5Yu66IKY6KuN5pWZ5Yqp6Yap55q3QSk1NABESeaLvuWJmOWLtO+9reWnsA1UD10ACgkNXQQAAUExFxNHXQhHAO+9pA==",
       "chips": [
-        "- 若未攔截導致阿嬤半夜低血糖昏迷，扣除綠籌碼（健康度）4 枚。",
-        "- 若成功建議換成不需調劑量的 DPP-4 抑制劑，不扣籌碼。"
+        "enc:QEXoioHmnIfmlaTmiYPlsaHohprpmZrlrYHljLjlpLHkvbbooKbns6Xmma7ovprvvanmiIfpmYnnt5DnsKXno5PvvablgIDlu5Llu5TvvKQMRuaeqeOBow==",
+        "enc:QEXoioHmiL3li6/lupPorJ/mjrXmibXkuajpnbLoqpLliqnphqnnmrdBKTU0AERJ5ou+5YmY5Yu0772p5Lm/5omO57G056Oa44Cx"
       ]
     }
   },
@@ -543,12 +601,12 @@ window.GAME_DATA_CASES = [
     "interactions": [],
     "interactionImage": "",
     "teacher": {
-      "review": "FDA 警告懷孕後期 (第三孕期，約20週後) 絕對禁用 NSAIDs。",
-      "risk": "會導致胎兒的「動脈導管提早閉合」，引發胎兒肺動脈高壓甚至死胎，且會減少羊水量（羊水過少症）。",
-      "planB": "退回處方！建議改用 Acetaminophen（普拿疼，孕婦首選止痛藥），並輔以物理復健治療。",
+      "review": "enc:KyElDeisluWQo+aGmOWsu+W/qeadulIF56yU5Lmv5a2m5p2+772h57WhVh3pgYHlv6VGTue0sOWxqOens+eUhRgoYCAkIRfjgK8=",
+      "risk": "enc:5p2u5bGr6IaQ6IOj5YSi55ut44Gj5Yq76IWt5bGr56+T5o+95peR6Zev5ZC744Gs772h5b2w55iY6IOj5YSi6IOT5Yq66IWm6aq95aK255Wo6Iee5q2D6IKo77y/5Lm15p2u5rm+5bG1576n5rGE6Yam772n57+k5rGR6YCr5bGj55eq77yx44Gk",
+      "planB": "enc:6YGt5Zq76Jix5paU772x5bqT6Kyf5pWX55WNRTNOXRJSDAQLC10YDAHvvabmmIvmiprnl47vvKHlra3lqIDppqXpgJnmrI/nlr7oloHvvKTvvbzkuY/ovbvkuovniIznkaPlv5vlgYjmsoPnmKTjgLE=",
       "chips": [
-        "- 若藥師未看孕期直接發藥，導致胎兒動脈導管提早閉合送急診，扣除綠籌碼（健康度）5 枚。",
-        "- 若藥師成功攔截並更換為普拿疼，守護母嬰安全，不扣籌碼。"
+        "enc:QEXoioHol4jluZvmnYPnnaTlrLvmnbrnmpHmj5fnmZHol53vvarlsL3ohpXogqPlhLflirHohKXlsb7nr4jmjr/mlofpl6zlka3pgbPmgIjoqILvvarmiZDpmIXnt43nsKnno5jvvKXlgJXlu57lu4nvvadQReafqOOArw==",
+        "enc:QEXoioHol4jluZvmibnli7DmlbrmiY/kuYPmmobmj7bngoLmmIjmi4znl53vvaHlr63orJPmr6DlrYDlr6DlhIfvvaLkuajmiIbnsL7nopHjgLo="
       ]
     }
   },
@@ -594,14 +652,14 @@ window.GAME_DATA_CASES = [
     ],
     "interactionImage": "",
     "teacher": {
-      "review": "實習生必須敏銳抓出 Diclofenac (服他寧) 屬於非類固醇類消炎止痛藥 (NSAID)",
-      "risk": "NSAID 這類藥品本身就會影響血液凝集功能 。若與新型口服抗凝血劑 (DOAC, 如拜瑞妥) 合併服用時，會加成拜瑞妥的抗凝血作用，大幅增加出血的風險，特別是腸胃道出血 。若未攔截，病人 5 天後可能會開始覺得頭暈、身體虛弱無力，出現嚴重貧血現象，最終因胃出血送急診 。",
-      "planB": "基礎解法：建議醫師停用 NSAID 類止痛藥，為減少出血風險，應盡量避免併服 。可建議改開立不影響血小板凝集的單純止痛藥（如 Acetaminophen 普拿疼）。\n\n進階解法：若病人疼痛分數極高（Acetaminophen 壓不下來），實習生可建議醫師評估使用弱鴉片類止痛藥（如 Tramadol），或是改用局部的外用消炎止痛藥布/藥膏來替代口服 NSAID，以降低全身性的副作用。若因特殊考量必須併用 NSAID，藥師必須強烈提醒病人謹慎自我監測是否有出血症狀（如黑便、血便、流鼻血、異常瘀青等） 。",
+      "review": "enc:5a6L576355W75b+o6aG45pSm6Yuc5ou95YafRTZEWwpcBwgLBU5QQeadouS6uOWugkxS5bGB5paE6Zy46aGt5Zqb6Yeq6aC75res54Kj5qyS55ay6JaKTk0rIWxxIho=",
+      "risk": "enc:IzYlZDRJ6YG26aCw6JaA5ZKk5p2e6LqG5bCJ5p2l5b2C6Z6e6KCt5reX5Ya56Zur5Yuv6IKUT+OBrOiKgOiJouaXguWepuWPm+adq+aKpOWGvOigreWLtEQFNCYuLUlF5aew5oux55Gm5aeDGkHlkaXkvJDmnannlIXmmLLvvaXmnazli47mibXmirnnkKzlpojnmrzmi7Hlh67ooKHkvLHnlY3vvajlpIrluLXlo7fli4/lhpTooKXnm6Hpo5rpmofvvLTniJ/liJbmmY7ohJXogqbpgLflh5fooLBJ44Gt6IqL5p2P5pWx5omY77yh55e95LucE1RN5aWM5b+o5Y+C6IKN5p2q6Zek5aal6Kef5b+y6aGf5pql44C56LuN6aun6Ji65b2c54WE5Yu/77yh5YaK546X5Zub6Yaj6LOC6KCl546M6LGM77y05p2m57Wx5ZqB6IKu5Yaf6KCk6YCs5oGV6KmTT+OBrA==",
+      "planB": "enc:5Z6X56Wr6KaH5rO4772q5bqT6Kyf6YeF5bmO5YC555WaDXY1cigpRemguuatj+eWq+iWjO+9o+eDlOa5vuWxtOWGiOihremikOmbjO+8v+aGqOeajOmGqumAm+WFoOS8headpE/jgazljorlup/orILmlJTplrPnqq3kuL7lvJDpnpLooKXlsavmnZLlhq3pmq/nm6vll4DntbHmrIfnlqnol4jvvLDlp6QTIA4AEEwdAAEBFQ0XQxjmmIjmi4znl53vvaTjgaduJ+mBgumbp+imjOayu++9v+iKgOeWt+S6l+eWhOeWveWIteaUmeakmOmqve+9rGwTDBsPCAwcQkgOVg9N5aK25Lmp5Lim5L+2772g772j5a6I576355W65Y6d5buX6K2I6YeN5biY6Ki05L2d5Lya55WM5byc6bW554iu6aCx5qyM55a+6JaA77265aavGDJBAAAEAEIc772g772j5om45pmK5pWc55Wa5bGt6YOQ55ui5aSl55WJ5rel54Or5qyG55e26JaV5bmqQOiWi+iHquS/o+aajeS7juWPm+adqxMvPiQtae+9vOS6jOmYouS8oOWEjei7juaBleeaqeWJl+S8uueUm+OBo+iKiOWaheeIneaup+iBs+mGpuW+qumhpuS8kOeVjVJjayd6Je+9oeiWgOW5j+W/qOmhuOW9nueCp+aOvumHt+eWoOS7iOislOaFtuiGjOaIoueagua5geaZiuWRguacpOWGiuigqeeWqOeKru+9reWnp+m6o+S+kuOAueigpuS+jOOBoOa0rOm9nuigpOOArOeUgOW5keeZr+mcvOesrO+9rFLjgK8=",
       "chips": [
-        "- 若藥師未發現交互作用而照發藥品，導致病人發生嚴重胃出血 ，扣除綠籌碼（健康度）4 枚。",
-        "- 若藥師成功攔截，並提出更換止痛藥的建議，成功拆除抗凝血炸彈，不扣額外籌碼（完美的用藥安全守護！）。",
-        "- 若藥師不僅提出換藥，還主動對病人進行了「出血症狀自我監測 」的衛教演練，獎勵綠籌碼 1 枚（展現卓越的衛教溝通能力）。",
-        "- 難點解析：骨科與心臟科的常見衝突，加乘出血風險 。考量到術後真的會痛，藥師必須提出合理的止痛替代方案（如 Acetaminophen），不能只說「不能吃」。"
+        "enc:QEXoioHol4jluZvmnYPnmJPnjpDku4Hku7fkvK7nlIXogLTnhIHnmY/oloTlkqzvvanlsaroh5nnlrXku5PnmJPnlbHlm5HphqjogrHlh5foobhG77y/5oiC6ZiJ57eF57Co56KR77245YCM5buY5buI772sUVLmnrfjgLo=",
+        "enc:QEXoioHol4jluZvmibnli7DmlbrmiY/vvankuZTmj73lh4LmmpLmj6jmrIPnlrboloDnm6Dlu5forIDvvaXmib/li7HmiqPpmIHmi6Xlh7Doobjng57lvbvvva3kuaDmiIbpoKnlpLvnsLzno5Xvvaflr6Lnv6vnm6HnlZrol4jlrrHlhI7lrrvorJbvvazvvazjgaY=",
+        "enc:QEXoioHol4jluZvkuaTlgqrmjr7lhp/mjr7olpfvvKHpgrzkuZ3li6blsaznlqjku5/pgZbooaHku7bjgaXlhpXooK7nlqLniqXohpjmiLznm5vmuYoT44Gs55up6KC+5pS95ry557aE772l54yh5Yqb57eF57Cp56OODQlG5p6p772p5bC4546b5Yy36Lan55u06KCy5pS25ruz6YG/6IKY5Yup77yk44C6",
+        "enc:QEXpmofpu7PoppPmn7nvvbXpq4bnprToiaLlvrHoh7Lnp6nnm6LluIvop6rooLDnq6Tvvajlio3kuKjlhpPooK/po4bpm49F44Gw6ICu6Ye35YmW6KGg5b+t552y55uh5p2n55e277286JaM5bmE5b6r6aGt5o615YaI5ZCl55C+55ui5q2R55a65pqS5LqG5ped5qGl77245aerTy8GAAZMVQ9dDh0NAUPvvbnvvaXkuaLogpPljo/oq4/jgb7kuKDog4XlkaXjgL7jgaM="
       ]
     }
   },
@@ -644,13 +702,13 @@ window.GAME_DATA_CASES = [
     ],
     "interactionImage": "",
     "teacher": {
-      "review": "實習生必須抓出 Furosemide 是排鉀型利尿劑，會造成病人體內的鉀離子流失 。",
-      "risk": "毛地黃 (Digoxin) 的安全治療濃度區間非常狹窄 。當病人發生「低血鉀」時，會增加心肌對毛地黃的敏感度，極易誘發毛地黃中毒，導致嚴重噁心、嘔吐、視覺異常（黃綠色盲），甚至是致命性的心律不整 。\n    ◦ 補充: Digoxin使用劑量是10-15 micro-g/kg：治療CHF，藥物濃度理想範圍是0.8~2.0ng/ml；治療Af，藥物濃度理想範圍是1.5~2.5ng/ml。",
-      "planB": "處方介入：主動建議醫師加開「鉀離子補充劑 (如 Slow-K)」，或是將利尿劑更改/合併為「保鉀型利尿劑 (如 Spironolactone)」。\n\n衛教防守：發藥時，強烈提醒家屬讓爺爺多補充富含鉀離子的食物（如香蕉、柑橘），並告知若出現「眼前看起來黃黃綠綠的、一直想吐」，必須立刻停藥掛急診並抽血監測鉀與鎂離子濃度 。建議改用不需依腎功能調整劑量的 DPP-4 抑制劑（如 linagliptin/Trajenta）。",
+      "review": "enc:5a6L576355W75b+o6aG45ou65YaVTiMQAEJLA14ICQBE5piC5o+i6Yip5Z+k5YmH5bGa5Yu0772+5pyu6YCY5om255e25Lub6aq55YSC55ug6Ymt6ZqS5ay55rSu5aWfReOBpw==",
+      "risk": "enc:5q625Z2V6bqnDVgtBgkKHRtDEUbnmrflr6jlhIXms57nmKbmv67lu5bljKnpl7zpnLDluZ3nipznq7YN44C655SQ55e25Lub55iR55W644Go5L2j6KCw6Yip44Gi5pis772p5p2m5aOs5YqN5b+76IOq5bC+5q665Z2d6bqm55ug5pWi5oWv5buP772j5qSb5pm26Ku955iO5q+25ZyI6bql5Lie5q6z772h5bGr6IaQ5ZqZ6Ya95Zio5b6s44Gv5Zmx5ZG144Gz6Ka76KaC55SW5biL772p6bqu57eF6IiW55uf7725772l55W16Iad5pmK6IaR5ZCP5oCK55q85b6l5b645Lms5pSZReOBpidQSU9O4paDReiiruWFqAJGdwgKChxEHuS8lueVh+WLv+mGquaZikMdFVcGQQAMB18fRAhBDgLvvajmspbnmboleyfvvaHoloDniI3mv67lu5bnka/mgpznrqrlnajmmYpCAwAYAU9dCwMCHQXvvbTms5XnmKckFO+8oeiXneeIj+a/sOW7h+eRq+aClueuoOWcoOaZn1hBWxtXXBhWARwMAeOBpw==",
+      "planB": "enc:6Ji45pec5Lqv5YWI772q5LmS5Yq65bqU6KyV6YeO5bmZ5YqN6Zaz44Gq6Ymz6ZqD5ay96KK55YSh5Yq8UEHlp61ONgkdWhUtGuOBrO+9oeaJs+aZi+WwquWJmeWxluWLvuaamuaVnErlkbrkvZjngoLjgarkv67piKHln6bliYzlsZvlirxQQeWnrU42FRtfVwhcDQwGEEIeDEbjgaPjgadveOihtuaVoemZlOWuu++9u+eYkeiWgOaYpu+8oeW9h+eCoeaOv+mHvOWvk+WwieivoeeIl+eIguWlvOijr+WEpOWuoeWRjumIpOmbj+WsoOebremisOeIh++9reWnp+mnq+iVpOOAueaet+apq++9qO+9oeS5g+WQruefiOiKleWGk+eOkeOBouedmeWIqOeduei1muS+vum6pem7sOe3gee3jeeboeOBpeS4reeahOaCmuWRv+OBo++9qeW+oOmhuuerpuWIg+WAuuiXluaPuuaBiOipn+S5guaKkOigsOeaiua5g+mIruiJoumPp+makOWtvea/u+W7gBPjgaPlupforJXmlZ3nlIXkub3pnankv7LohKDli7rogpjoq43mlZnliqnphqnnmrdBKTU0AERJ5ou+5YmY5Yu0772t5aewDVQPXQAKCQ1dBAABQTEXE0ddCEcA772k44Gn",
       "chips": [
-        "- 若藥師未察覺低血鉀風險直接發藥，爺爺兩週後因嚴重嘔吐與心律不整掛急診 ，扣除綠籌碼（健康度）4 枚。",
-        "- 若藥師成功介入建議補充鉀離子，或進行了完整的飲食衛教，完美拆解中毒炸彈，不扣籌碼。",
-        "- 難點解析：老人科經典地雷。排鉀利尿劑導致低血鉀，進而誘發毛地黃中毒 。考驗電解質與狹窄治療指數 (NTI) 藥物的連動思維。"
+        "enc:QEXoioHol4jluZvmnYPlrrDop5TkvKvooKXpiLLpooXpmpLnmpLmjpbnmJ3olojvvanniZ7niJflhJnpgZjlv6Plmo7lm5HphqjlmablkL3oiL/lvqXlvrjkuazmlJnmj77mgYHoqJdQ772l5oiM6ZiK57eF57Cp56OO77yl5YGd5buR5bqV772oWUXmn77jgK8=",
+        "enc:QEXoioHol4jluZvmibnli7DkuqXlhIDlup/orILoo7Hlhb3piKbpm5HlrLHvvaHmibPpgZbooaHku7blr6XmlJvnm6rpopfporrooKnmlbTvvLTlr6rnvr3miqfopo7kuYjmrrbngpXlvLjvvaXkuaLmiI3nsKnno5njgbA=",
+        "enc:QEXpmofpu7PoppPmn7nvvbXoga/ku5/nprTnt6HlhZXlnIjpmpHjgLHmj7PpiK3liYzlsZvlirzlsb7ohp3kvKHooK7piKXvvanpgYDogKHoqqDnmJrmr6jlnZHpuq7kuYjmrrYN44Gy6IGq6ai46ZqV6KaG6LKP6Im154uU56q85rOd55mx5o2m5pSVRUxjJCBGTuiWgOeIjOebtumAjuWLreaBu+e2nuOBow=="
       ]
     }
   },
@@ -684,12 +742,12 @@ window.GAME_DATA_CASES = [
     "interactions": [],
     "interactionImage": "",
     "teacher": {
-      "review": "實習生必須檢視病人的「過去病史（氣喘）」",
-      "risk": "Propranolol 是「非選擇性」的 Beta 阻斷劑，除了作用於心臟，也會阻斷支氣管的 Beta-2 受體。氣喘病人一吃，極可能引發嚴重的支氣管痙攣（氣喘急性發作），甚至窒息",
-      "planB": "建議將藥物更改為針對心臟的「選擇性 Beta-1 阻斷劑（如 Bisoprolol）」，或改用其他類別的偏頭痛預防藥物（如 Flunarizine）。",
+      "review": "enc:5a6L576355W75b+o6aG45quL6Ke555ar5Luf55uh44G+6YGj5Y6D55aj5Y+B772p5rGO5Ze9772t44Cg",
+      "risk": "enc:PRcLXQIIAQEJCh4N5piX44Gq6Z2t6YCZ5pKq5oGC44Gp55qpUCsKGgRF6ZmJ5paa5Yqp772q6ZmX5Lun5Lyx55WN5peY5b+u6Iav772l5Liw5p2t6Zme5peS5pWd5rCO566Z55uiEyMIEQUAQknljrjpqrrjgafmsYbll6rnl6jkuoLkuablkLDvva3mpJjljorogpnlvLjnmIzlm53phqLnm6rmlYrmsYbnr5Pnl7TmlJvvva7msJDll7nmgYjmgYLnmJjkvbHvvbnvvaXnlbXohp3nq7fmgIo=",
+      "planB": "enc:5bqX6KyV5bGj6JeI54iZ5pqd5pWW54OU6Ya45bGo5b6x6Iey55q844Gq6YGL5pKm5oGKRSZIBAhCX0XpmZ7ml4XlirzvvLDlp6QTIwQWC10CBgMBCe+9rOOBv++8oeaIruaVn+eUm+WEl+S6u+mgu+WJgeeaqeWAv+mhhOeWtOmhvumZl+iWgOeIm++8peWmukZ1DRgLBV8ZEwYAAO+9rOOBsA==",
       "chips": [
-        "- 若藥師未看病史直接發藥，病人當晚氣喘大發作送急診插管，扣除綠籌碼（健康度）5 枚。",
-        "- 若藥師成功跨科別攔截，守住呼吸道防線，不扣籌碼，獎勵綠籌碼 1 枚。"
+        "enc:QEXoioHol4jluZvmnYPnnaTnlqvljpfnmpHmj5fnmZHol53vvarnl7bku5vnlJvmmL/msYfllrXlpZfnmJXkvLPpga/mgYDoqZ/mjqDnrozvvLTmiIXpmZfnt4HnsKHno5nvvazlgYjlu4flu4/vvaZbReafv+OBsA==",
+        "enc:QEXoioHol4jluZvmibnli7DotobnprTliYDmlabmiIfvvLTlr67kvbzlkJ3lkZXpgLbpmZbnt7fvvbzkuaTmiIznsKLno5nvvannjLzli5jntpjnsKrnoo9BXEXmn77jgK8="
       ]
     }
   },
@@ -739,12 +797,12 @@ window.GAME_DATA_CASES = [
     "interactions": [],
     "interactionImage": "",
     "teacher": {
-      "review": "實習生必須計算「總劑量」與審視「健保規範」。\n可以討論鼻噴劑的類型說明 院內不同的type",
-      "risk": "Avamys 每天每側 2 下 = 每天共 4 下。一瓶 120 下剛好是 30 天的用量。健保局嚴格規定，此類鼻噴劑「每次處方以一瓶為原則」，除非有特殊出國證明，否則 28 天開立 2 瓶絕對會面臨健保 100% 放大核刪，醫院將承擔龐大罰款。",
-      "planB": "-行政防守：退回處方，請醫師將健保數量改為「1 瓶」。\n-溝通方案：若病人堅持要多帶一瓶備用，建議醫師將第 2 瓶改為「全自費」開立。",
+      "review": "enc:5a6L576355W75b+o6aG46Kmh56+444Gi57mY5Yu06Ya944Cg6Ii/5a6P6Kal44Gt5YCI5L646Ker56+p44G944GrZeWOgeS6gOipq+iqpOm8luWZjOWLt+eat+mgv+Wfpuirj+aZqg3pmJLlhI7kuaLlkaLnm6ERC11d",
+      "risk": "enc:LBMFQAkaT+auoeWljOauquWAhg0KRuS4uEFQReauq+WkhOWEgUlbTuS5ruOBp+S5sueTmxhXAVFN5Lmu5Yi/5aWQ5pmfSVxeReWljOebtueUhemHt+OBpOWBluS+vOWwreWbkeahmOimouWvqu+9peasi+mgsOm9nuWYkeWLo+OAoeavt+ath+iZpuaXmOS6iOS5peeSkueCl+WPr+WIruOBou+9oumYgemcu+adu+eJlOausuWGnOWcuOisqOaZo++9qeWRguWJqlBbV07lpYzpl67nqrkNCkbnk4XntLTlsaDmnabpnIboh4XlgJXkvrRPX1VVVw3mlIblpYHmoIvliYvvvaHph47pmIblsKrmiI/mkr3pv7/lpYnnvJXmrZvjgbA=",
+      "planB": "enc:QOigqeaVm+mYn+WvuO+9s+mBr+WasOiYsOaXnO+9vuirpumGk+W5jeWwtOWAhOS+sOaUnemGq+aUlOeDiuOBpV5O55KT44Go44GwJxXmu7vpgKnml5jmoKXvvb/oioHnl6jku4rloazmja7op6/lpb/luZPkubLnk5vlgqHnlY7vvL/lupvorJ3ph47luY/lsKrnrZxJXU7nkpPmlZzng4jjgKHlhZDohozosojjgazpl6bnqq7jgaY=",
       "chips": [
-        "- 若藥師未計算總量直接發藥，導致醫院被健保局核刪罰款，扣除紅籌碼（藥費）4 枚。",
-        "- 若藥師成功擋下並建議「一瓶健保、一瓶自費」，完美平衡病人需求與醫院財務，不扣籌碼，獎勵紅籌碼 1 枚。"
+        "enc:QEXoioHol4jluZvmnYPoqafnr7nnuZjphqrnmobmjojnmYToloPvvL/lsa/ohpnph47pmIboooblgJXkvrTlsK/moZbliY/nvJXmrYzvvKHmiZvpmILntLbnsK3no5Hvva3oloHospbvvbldT+aftOOBpw==",
+        "enc:QEXoioHol4jluZvmibnli7DmkqXkua7kuYPluojorZ3jgLTkuabnk4XlgITkvrDjgaTkuaTnk5vohpros5LjgaLvvaLlr6nnv6vluIHooYznl73ku5zpnLPmsKPoiarph47pmIbosozliqnvvaXkuaLmiI3nsKnno5nvvb7njaPli43ntaPnsb/no51NVETmnrfjgbI="
       ]
     }
   },
@@ -815,13 +873,13 @@ window.GAME_DATA_CASES = [
     "interactions": [],
     "interactionImage": "",
     "teacher": {
-      "review": "實習生必須掌握近期的「臨床時事」——GLP-1 針劑因全球減重熱潮，目前處於全台大缺藥狀態，醫院庫存為零。",
-      "risk": "若不主動聯絡醫師更改處方，病人到領藥櫃檯才發現沒藥，會引發嚴重的醫病衝突與客訴，且病人當天的治療計畫將被延誤。",
-      "planB": "-藥理替代：建議醫師改開立同樣具備心血管保護與減重效益的 SGLT2 抑制劑（如 Empagliflozin 或 Dapagliflozin）。\n-同類替代：若醫師堅持使用 GLP-1，建議改用目前庫存相對穩定的口服劑型（如 Rybelsus; 瑞倍適）。",
+      "review": "enc:5a6L576355W75b+o6aG45o+l5o6O6L6/5p2655uh44G+6IeF5bqy5pik5Lq444Gs4oG54oGxI2EgRF5O6Ya45Yu05ZqS5YWF55C75rm96Ye+54eQ5ryD772p55qK5Ymg6Jil5peV5YSH5Y6e5aWC572f6JaX54ut5oWz772q6YaY6ZiD5buG5ay954Oe6Zub44Gy",
+      "risk": "enc:6IqI5Lmo5Lmf5Yu46ICf57SI6YeE5bmF5pqR5pWc6Jin5paU77y055aj5LqJ5YmR6aG16JaA5qqn5qqC5oi955iV546R5rO86JaA772p5p2x5by455mE5ZuS6Ye+55ul6YeG55ag6KC556qs6Im35a+L6Kmb772i5Lmx55ag5LuI55Wb5aSR55ui5rKI55ij6Kml55SO5bGj6KKG5bqG6KuN44Gt",
+      "planB": "enc:QOiWgOeRouabkuS6k++9s+W6leisnumHjuW5juaVi+mWpuers+WRquaokOWEluWDtOW+puigpOeujOS+reisnuiJqOa5temGqOaUreeauOeaqRg1dC05V0TmirzliYbli7jvvaflp6xFIB9dWQFfCAsJC1cZB0/mibhFIRNdWQFfCAsJC1cZB++9puOBrG9I5ZG+6aGz5puH5LqF77yp6IqE6YeG5bmO5aGh5oys5LyP55WBTykpNV8c77y05bqc6K2D5pWY55WF55qL5Yip5bqG5ayo55qR5bGi56iH5a+/55uh5Y6R5pyg5Yqp5Z+t77y75aejTTcdTxUFHBsWXlLnkbPlgLXpgI/vvLrjgaM=",
       "chips": [
-        "- 若藥師未查庫存直接過卡，導致前線櫃台被病人大罵，扣除綠籌碼（健康度）3 枚。",
-        "- 若藥師即時介入並成功建議替代藥物（如 SGLT2i），因為替代藥物也具備療效，不扣額外籌碼。",
-        "- 難點解析：考驗時事敏感度與臨床應變。沒藥就是沒藥，必須從藥理機轉出發，找出能兼顧降糖與減重心血管效益的替代品 (如 SGLT2i)。"
+        "enc:QEXoioHol4jluZvmnYPmnorlu4XlrL3nmpHmj5fpgaPljZnvvarlsL3ohpXliKDntr/mqqflj53oo5vnlqzku5XlpYnnvJDvvanmiJHpmYnntpjnsKrnoo/vvanlgIjlu5Llu4LvvKRDSeafteOBrA==",
+        "enc:QEXoioHol4jluZvljJrmmK3kuqXlhIDkuYPmiaLlirLlu4LorJbmm4zkuoLolojniIzvvazlpq9QOigiMVcb77yk77y05ZqG54KJ5pqe5LqO6JaA54iN5Lmy5YSH5YOw55it5pSm772p5Lmo5oiR6aGg5aSu57Cq56KP44Gj",
+        "enc:QEXpmofpu7PoppPmn7nvvbXoga3pqLLmmKfku7nmlaLmhKflu4DoiLTohonlu6fmhqzor67jgK/ms6LolozlsZ7mmYHms7foloDvvb7lv6jpoLDlv7jol5bnkafmqLLovKzlhp7nmZHvvbzmiJflhpXogpPlhJnpoILpmL/ns7voiL/mub3ph77lvqLooK3nr4TmlKznm6fnm7Tmmpbkuozlkq9FTeWnsA1rIX81XwxN44Cv"
       ]
     }
   },
@@ -871,14 +929,14 @@ window.GAME_DATA_CASES = [
     "interactions": [],
     "interactionImage": "",
     "teacher": {
-      "review": "實習生必須對「健保給付規範（行政端）」有敏感度。",
-      "risk": "氫離子幫浦抑制劑 (PPI) 的單價較高，健保局規定必須附有近期（通常為 4 個月內）的「胃鏡檢查報告」證實有潰瘍或逆流性食道炎，才能以健保身分給付。若無報告而開立，將面臨 100% 健保核刪，並可能放大回推罰款。",
-      "planB": "- 先查詢系統：確認病人近期是否有做過胃鏡。\n- 替代方案：若無胃鏡報告，且病人拒絕照胃鏡，建議醫師改開立不需胃鏡報告的 H2-blocker（如 Famotidine）或一般制酸劑 。\n- 自費方案：若醫師評估強烈需要 PPI，提醒醫師改為「自費處方」，讓病人自費購買。",
+      "review": "enc:5a6L576355W75b+o6aG45bGk44Gj5YCL5L6457SD5Lqq6Kai56+8772u6KG/5pWe56qC772s44Gp5pyk5pS/5oW25buJ44Gs",
+      "risk": "enc:5rGG6ZqH5ay05bmG5rSW5ou45YmZ5Yu/RU0ifXFPE+ebpeWXg+WCnOi9p+mrte+9vOWAjOS+suWwruinquWvv+W+t+mgpemZvOadr+i/ouadvu+9pemBv+W5nOeCl1BdT+WBpeadreWEgu+9u+eaqeOAtOiCpemPkuarg+aeiOWhlOWQruOAoOisueWuj+adpua8nueZqOaJs+mBtOa1rOaAn+miuemBoOeDr++9oeaIqOiCmeS7iOWAleS+tOi7hOWJqOe0g+S6veOBsOiLiOeEmeWhl+WRueiBremXpueqru+9qOWwqumckuiGgU9fVVVXDeWBneS+u+agi+WJi++9oeS5g+WOi+iDkOaVjuWljuWaseaPhue8leatm+OBsA==",
+      "planB": "enc:QEXlhKzmn4joqJLnspLntJ7vvbTno5/oq6jnlrfkupfov6nmnbnmmJzlkYfmnaTlgL/pgKrog67pjpHjgatlQ0XmmprkupHmlpTmobDvvbzoi5bnhYDogq7pjoTloZXlkafvvbzkub3nlqrku5TmirfntLDnhJXog67pj5nvvarlu4norJHph4bluY7mlZ3plqbnqrvkuaTpna/ogq3pjoTloZTlkLjnmqkYLgFMDwkLThsMHe+9puWnp0U0TFUJRwgJDApI77255om/5Lmv6ImC5YmT6YSd5YujDeOAumweQeiGh+iznuaXneahpe+9quiKjOmHhOW5heiosOS9leW9heeDpemcuOinpxMxPSzvvajmj73ph6Lph4LluYTmlZfng5/jganohpjospboma3ml5/jgL7vva3or77nlqDku57oh4fos4vospXos5jjgaw=",
       "chips": [
-        "- 若藥師未察覺健保規範，導致醫院遭健保局放大核刪，扣除紅籌碼（藥費）4 枚。",
-        "- 若藥師建議改用 H2-blocker，扣除綠籌碼（健康度）1 枚（因 H2-blocker 療效稍弱於 PPI），但不扣藥費。",
-        "- 若藥師建議轉自費，不扣籌碼（完美平衡療效與醫院預算）。",
-        "- 難點解析：純粹的行政與健保核刪陷阱。藥理完全正確，但程序錯誤。能讓學生深刻體會「不是藥開對了就好，還要符合健保局的遊戲規則」。"
+        "enc:QEXoioHol4jluZvmnYPlrrDop5TlgIDkvrjop73nr6nvvLTlsajoh4fph4rpmI/pgIjlgIHkv7DlsLDmlZflpYjmoZbliY/vvanmiJHpmYnntL3nsKrnoo/vvanolojos57vva0ZUOafs+OBrQ==",
+        "enc:QEXoioHol4jluZvlupPorJ/mlZfnlY1FOh8VBF8ODg4BX++9vOaIiumYi+e3juewqeejme+9uuWBiOW6j+W7gO+8ulBN5p+/772s5ZuNUCFdQwcJHU5TA0FB55iv5pSt56mp5byc5peMST8+LO+9rO+9vuS9q+S4teaIheiXluizmuOBrw==",
+        "enc:QEXoioHol4jluZvlupPorJ/ovKfoho/os57vvb7kuKDmiZvnsKrnoo/vvanlr6Hnv6vluJfooYznmLLmlKHoiajph4XpmIfpobXnr6XvvKTjgLo=",
+        "enc:QEXpmofpu7PoppPmn7nvvbXntbrns5znm6HooL7mlJLoiL/lgIPkv67moZnliYfpmJLpmZXjgK/olpXnka/lr6PlhIbmrIbno5/vvb7kvavnqLPlu6npjJzoq4Xjga/ogpjor7flrZXnla/mtpjliZTpqrrmnabjgankub/mmILol53pl63lsL7ku6flsZzlpJjvvajpgqnop7HnrY/lkaflgIvkvrjlsKXnm7bpgafmiIrop6nlibTjgazjga8="
       ]
     }
   }
