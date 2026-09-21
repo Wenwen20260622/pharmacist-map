@@ -891,7 +891,7 @@ window.__SEED__ = /*SEED_START*/{
 const DATA = window.GAME_DATA;
 /* ---- 老師答案輕度編碼（防君子：讓學生翻檔案時看到亂碼） ---- */
 var ENC_KEY="med-pioneer-8f3a";
-var PW_ENC="enc:XFdWFUBYXVxSVg==";
+var PW_ENC="enc:XFdWGEhYXVxSVg==";
 function _xor(s,k){var o="";for(var i=0;i<s.length;i++){o+=String.fromCharCode(s.charCodeAt(i)^k.charCodeAt(i%k.length));}return o;}
 function encTxt(s){ if(s==null||s==="") return s; try{ return "enc:"+btoa(unescape(encodeURIComponent(_xor(String(s),ENC_KEY)))); }catch(e){ return s; } }
 function decTxt(s){ if(typeof s!=="string"||s.indexOf("enc:")!==0) return s; try{ return _xor(decodeURIComponent(escape(atob(s.slice(4)))),ENC_KEY); }catch(e){ return s; } }
