@@ -1094,7 +1094,7 @@ function popCase(c){
   const starTxt = STAR_LABELS[c.star]||"";
   pop.innerHTML=`
     <div class="card-pop-head">
-      <div><div class="code eng">${esc(c.code)} · ${esc(starTxt)}</div><h3>${esc(c.title)}</h3></div>
+      <div><div class="code eng">${esc(c.code)} · ${esc(starTxt)}</div></div>
       <button class="close" onclick="closePop()">×</button>
     </div>
     <div class="card-pop-body single">
