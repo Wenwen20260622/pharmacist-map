@@ -98,14 +98,25 @@ body{
 
 /* star selector */
 .stars{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:6px 0 18px}
-.star-btn{font-family:inherit;cursor:pointer;border:2px solid transparent;border-radius:14px;
-  padding:14px 8px;font-size:17px;font-weight:700;background:var(--blue);color:#fff;
+.star-btn{font-family:inherit;cursor:pointer;border:3px solid transparent;border-radius:14px;
+  padding:13px 8px;font-size:17px;font-weight:700;background:var(--blue);color:#fff;
   box-shadow:0 4px 0 var(--blue-d);transition:.12s;letter-spacing:2px}
 .star-btn:hover{filter:brightness(1.06)}
-.star-btn.sel{background:var(--green);box-shadow:0 4px 0 var(--green-d);transform:translateY(1px)}
+.star-btn.sel{background:var(--green);box-shadow:0 4px 0 var(--green-d);border-color:var(--ink);transform:translateY(1px)}
 .star-btn.special{background:#8256b5;box-shadow:0 4px 0 #6a3f9c;letter-spacing:0;font-size:15px}
 .star-btn.special.sel{background:var(--green);box-shadow:0 4px 0 var(--green-d)}
 .pool-row{display:flex;gap:10px;align-items:center;justify-content:center;margin-top:6px}
+
+/* 牌庫抽完：按鈕淡化 */
+.btn.drawn-out{opacity:.5;filter:saturate(.6);font-size:18px}
+
+/* 風格一致的提示條（取代原生 alert） */
+.toast-wrap{position:fixed;top:18px;left:50%;transform:translateX(-50%);z-index:9999;display:flex;flex-direction:column;gap:8px;align-items:center;pointer-events:none}
+.toast{background:var(--green);color:#fff;font-weight:800;font-size:15px;line-height:1.5;padding:12px 22px;border-radius:12px;
+  box-shadow:0 8px 22px rgba(58,49,40,.28);opacity:0;transform:translateY(-10px);transition:.25s;max-width:90vw;text-align:center}
+.toast.show{opacity:1;transform:translateY(0)}
+.toast.warn{background:var(--gold);color:#5a3d00}
+.toast.err{background:var(--red)}
 
 /* section divider inside draw */
 .draw-sec+.draw-sec{margin-top:24px;padding-top:22px;border-top:2px dashed var(--line)}
@@ -851,7 +862,7 @@ window.__SEED__ = /*SEED_START*/{
     <div class="panel draw-sec">
       <div class="panel-title"><h2>第一階段　抽取角色</h2></div>
       <div class="stage-tag" style="display:block;width:max-content;margin:0 auto 12px">各組輪流抽，一組抽齊三個角色</div>
-      <button class="btn btn-lg btn-role" onclick="drawRole()">🧑　抽角色卡</button>
+      <button id="btnRole" class="btn btn-lg btn-role" onclick="drawRole()">🧑　抽角色卡</button>
       <div class="pool-row" style="margin-top:14px">
         <button class="btn-ghost" onclick="reshuffle('role')">🔄 角色卡重新洗牌</button>
       </div>
@@ -861,7 +872,7 @@ window.__SEED__ = /*SEED_START*/{
       <div class="panel-title"><h2>第二階段　抽取狀況題</h2></div>
       <p class="hint">先選難度星級或特殊狀況，再抽一張</p>
       <div class="stars" id="starPicker"></div>
-      <button class="btn btn-lg btn-case" onclick="drawCase()">🎲　抽狀況卡</button>
+      <button id="btnCase" class="btn btn-lg btn-case" onclick="drawCase()">🎲　抽狀況卡</button>
       <div class="pool-row" style="margin-top:14px">
         <button class="btn-ghost" onclick="reshuffle('case')">🔄 狀況題重新洗牌</button>
       </div>
@@ -938,7 +949,7 @@ function showView(v){
   if((v==="teacher"||v==="editor") && !teacherAuthed){
     const p=prompt("請輸入老師密碼：");
     if(p===null) return;
-    if(encTxt(p)!==PW_ENC){ alert("密碼錯誤"); return; }
+    if(encTxt(p)!==PW_ENC){ toast("密碼錯誤","err"); return; }
     teacherAuthed=true;
   }
   document.querySelectorAll(".view").forEach(el=>el.classList.remove("on"));
@@ -992,33 +1003,66 @@ function renderStars(){
     const b=document.createElement("button");
     b.className="star-btn"+(s==="special"?" special":"")+(String(s)===String(selectedStar)?" sel":"");
     b.textContent=STAR_LABELS[s];
-    b.onclick=()=>{selectedStar=s; renderStars();};
+    b.onclick=()=>{selectedStar=s; renderStars(); updateDrawButtons();};
     box.appendChild(b);
   });
+}
+
+/* =================== 風格一致的提示條 =================== */
+function toast(msg,type){
+  let wrap=document.getElementById("toastWrap");
+  if(!wrap){ wrap=document.createElement("div"); wrap.id="toastWrap"; wrap.className="toast-wrap"; document.body.appendChild(wrap); }
+  const t=document.createElement("div");
+  t.className="toast"+(type?" "+type:"");
+  t.textContent=msg;
+  wrap.appendChild(t);
+  requestAnimationFrame(()=>t.classList.add("show"));
+  setTimeout(()=>{ t.classList.remove("show"); setTimeout(()=>t.remove(),300); }, 2400);
+}
+
+/* 依牌庫狀態更新兩顆抽卡鈕（抽完→改字＋淡化） */
+function updateDrawButtons(){
+  const br=document.getElementById("btnRole");
+  if(br){
+    const avail=DATA.roles.filter(r=>!pool.role.includes(r.id));
+    if(DATA.roles.length>0 && avail.length===0){ br.classList.add("drawn-out"); br.innerHTML="🧑　角色已抽完，請洗牌"; }
+    else{ br.classList.remove("drawn-out"); br.innerHTML="🧑　抽角色卡"; }
+  }
+  const bc=document.getElementById("btnCase");
+  if(bc){
+    const list=casesByStar(selectedStar);
+    const used=pool.case[String(selectedStar)]||[];
+    const avail=list.filter(c=>!used.includes(c.id));
+    if(list.length>0 && avail.length===0){ bc.classList.add("drawn-out"); bc.innerHTML="🎲　本級已抽完，請洗牌"; }
+    else{ bc.classList.remove("drawn-out"); bc.innerHTML="🎲　抽狀況卡"; }
+  }
 }
 
 /* =================== 抽卡邏輯 =================== */
 function drawRole(){
   const avail=DATA.roles.filter(r=>!pool.role.includes(r.id));
-  if(avail.length===0){ alert("角色卡已抽完，請按「角色卡重新洗牌」再抽。"); return; }
+  if(avail.length===0){ toast("角色卡已抽完，請按「角色卡重新洗牌」再抽。","warn"); return; }
   const r=avail[Math.floor(Math.random()*avail.length)];
   pool.role.push(r.id);
   popRole(r);
+  updateDrawButtons();
 }
 function drawCase(){
   const list=casesByStar(selectedStar);
-  if(list.length===0){ alert("這個星級目前還沒有題目，你可以到「題目編輯器」新增。"); return; }
+  if(list.length===0){ toast("這個星級目前還沒有題目，可到「題目編輯器」新增。","warn"); return; }
   const key=String(selectedStar);
   pool.case[key]=pool.case[key]||[];
   const avail=list.filter(c=>!pool.case[key].includes(c.id));
-  if(avail.length===0){ alert("這個星級的題目都抽完了，請按「狀況題重新洗牌」再抽。"); return; }
+  if(avail.length===0){ toast("這個星級的題目都抽完了，請按「狀況題重新洗牌」再抽。","warn"); return; }
   const c=avail[Math.floor(Math.random()*avail.length)];
   pool.case[key].push(c.id);
   popCase(c);
+  updateDrawButtons();
 }
 function reshuffle(kind){
-  if(kind==="role"){ pool.role=[]; alert("角色卡已重新洗牌，三個角色都可以再抽了。"); }
-  else{ pool.case={}; alert("狀況題已重新洗牌，所有星級的題目都回到牌庫了。"); }
+  if(kind==="role"){ pool.role=[]; toast("角色卡已重新洗牌，三個角色都可以再抽了。"); }
+  else{ pool.case={}; toast("狀況題已重新洗牌，所有星級的題目都回到牌庫了。"); }
+  updateDrawButtons();
 }
 
 /* =================== 彈窗：角色卡 / 狀況卡 =================== */
@@ -1309,9 +1353,9 @@ function importDrugsXlsx(e){
         drugs.push(d);
       });
       DATA.fields=headers; DATA.drugs=drugs;
-      alert("匯入成功：共 "+drugs.length+" 支藥、"+headers.length+" 個欄位。別忘了按「匯出角色與藥品 base.js」保存。");
+      toast("匯入成功：共 "+drugs.length+" 支藥、"+headers.length+" 個欄位。別忘了按匯出 base.js 保存。");
       renderDrugsTab();
-    }catch(err){ alert("匯入失敗，請確認是有效的 Excel 檔。\n"+err.message); }
+    }catch(err){ toast("匯入失敗，請確認是有效的 Excel 檔。","err"); }
   };
   rd.readAsArrayBuffer(f);
 }
@@ -1511,7 +1555,7 @@ function downloadFile(txt,name){
   const kb=Math.round(txt.length/1024);
   const blob=new Blob([txt],{type:"text/javascript"});
   const a=document.createElement("a"); a.href=URL.createObjectURL(blob); a.download=name; a.click();
-  alert("已匯出 "+name+"，大小約 "+kb+" KB。請上傳到 GitHub 覆蓋同名檔案。");
+  toast("已匯出 "+name+"，約 "+kb+" KB，請上傳 GitHub 覆蓋同名檔案。");
 }
 function exportCases(){
   const enc=DATA.cases.map(encodeTeacher);
@@ -1530,6 +1574,7 @@ function exportBase(){
   if(view==="student"){ renderStudent(p.get("type"),p.get("id")); return; }
   renderStars();
   renderIntro();
+  updateDrawButtons();
   if(view==="teacher"){ showView("teacher"); }
   else if(view==="editor"){ showView("editor"); }
 })();
