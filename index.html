@@ -180,18 +180,21 @@ body{
 .qr-box .lbl{font-size:13px;color:var(--ink-soft);margin-top:10px;font-weight:700}
 .qr-fallback{font-size:11px;word-break:break-all;color:var(--ink-soft);margin-top:8px}
 
-/* 資源師抽籤 */
-.res-draw{margin:0 auto 18px;max-width:440px;background:rgba(245,180,41,.10);
-  border:2px dashed var(--gold-d);border-radius:16px;padding:16px 18px 18px;text-align:center}
-.res-draw .rd-title{font-weight:900;color:var(--ink);font-size:16px;display:flex;align-items:center;justify-content:center;gap:7px;margin-bottom:3px}
-.res-draw .rd-sub{font-size:12.5px;color:var(--ink-soft);margin-bottom:13px;line-height:1.5}
-.res-draw .rd-btn{border:none;border-radius:12px;padding:11px 28px;font-size:16px;font-weight:900;cursor:pointer;
-  color:#5a3d00;background:linear-gradient(180deg,#f6c04a,var(--gold));box-shadow:0 5px 0 var(--gold-d);transition:transform .1s,box-shadow .1s}
-.res-draw .rd-btn:active{transform:translateY(3px);box-shadow:0 2px 0 var(--gold-d)}
+/* 資源師抽籤（與 QR 並排：QR 左、抽籤右） */
+.qr-row{display:flex;gap:16px;justify-content:center;align-items:stretch;margin-bottom:16px;flex-wrap:wrap}
+.qr-row .qr-box{flex:0 1 250px;max-width:250px;margin:0}
+.res-draw{flex:1 1 200px;min-width:190px;max-width:270px;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  background:rgba(245,180,41,.10);border:2px dashed var(--gold-d);border-radius:16px;padding:16px 18px;text-align:center}
+.res-draw .rd-title{font-weight:900;color:var(--ink);font-size:19px;margin-bottom:4px;letter-spacing:1px}
+.res-draw .rd-sub{font-size:13px;color:var(--ink-soft);margin-bottom:15px;line-height:1.5}
+.res-draw .rd-btn{border:none;border-radius:16px;cursor:pointer;color:#5a3d00;
+  background:linear-gradient(180deg,#f6c04a,var(--gold));box-shadow:0 6px 0 var(--gold-d);transition:transform .1s,box-shadow .1s;
+  font-weight:900;width:80px;height:80px;font-size:40px;line-height:1;display:flex;align-items:center;justify-content:center}
+.res-draw .rd-btn:active{transform:translateY(4px);box-shadow:0 2px 0 var(--gold-d)}
 .res-draw .rd-result:empty{margin:0}
-.res-draw .rd-result{margin-top:15px}
-.res-draw .rd-badge{display:inline-flex;align-items:center;gap:10px;font-size:32px;font-weight:900;
-  padding:13px 34px;border-radius:14px;color:#fff;animation:rdPop .32s cubic-bezier(.34,1.56,.64,1)}
+.res-draw .rd-result{margin-top:14px}
+.res-draw .rd-badge{display:inline-flex;align-items:center;gap:8px;font-size:26px;font-weight:900;
+  padding:11px 24px;border-radius:14px;color:#fff;animation:rdPop .32s cubic-bezier(.34,1.56,.64,1)}
 .res-draw .rd-badge.ok{background:linear-gradient(135deg,var(--green-l),var(--green-d));box-shadow:0 6px 16px rgba(74,124,89,.35)}
 .res-draw .rd-badge.bad{background:linear-gradient(135deg,#e5685a,var(--red-d));box-shadow:0 6px 16px rgba(216,74,59,.35)}
 @keyframes rdPop{0%{transform:scale(.55);opacity:0}60%{transform:scale(1.1)}100%{transform:scale(1);opacity:1}}
@@ -848,7 +851,7 @@ window.__SEED__ = /*SEED_START*/{
     <div class="panel draw-sec">
       <div class="panel-title"><h2>第一階段　抽取角色</h2></div>
       <div class="stage-tag" style="display:block;width:max-content;margin:0 auto 12px">各組輪流抽，一組抽齊三個角色</div>
-      <button class="btn btn-lg btn-role" onclick="drawRole()">🧑‍⚕️　抽角色卡</button>
+      <button class="btn btn-lg btn-role" onclick="drawRole()">🧑　抽角色卡</button>
       <div class="pool-row" style="margin-top:14px">
         <button class="btn-ghost" onclick="reshuffle('role')">🔄 角色卡重新洗牌</button>
       </div>
@@ -1114,14 +1117,14 @@ function popCase(c){
       <button class="close" onclick="closePop()">×</button>
     </div>
     <div class="card-pop-body single">
-      <div class="qr-top">
+      <div class="qr-row">
         <div class="qr-box"><div id="qrCase"></div><div class="lbl">學生掃描看完整情境</div></div>
-      </div>
-      <div class="res-draw">
-        <div class="rd-title">🎲 資源師抽籤</div>
-        <div class="rd-sub">視情境需要再抽，看此案例在院內目前的供應狀態</div>
-        <button type="button" class="rd-btn" onclick="drawResource(this)">抽籤</button>
-        <div class="rd-result" id="rdResult"></div>
+        <div class="res-draw">
+          <div class="rd-title">資源師</div>
+          <div class="rd-sub">院內供應狀態</div>
+          <button type="button" class="rd-btn" onclick="drawResource(this)">抽</button>
+          <div class="rd-result" id="rdResult"></div>
+        </div>
       </div>
       ${patientBlock(s)}
       ${renderRx(s)}
@@ -1140,7 +1143,6 @@ function drawResource(btn){
   box.innerHTML = hasStock
     ? '<span class="rd-badge ok">✓ 有藥</span>'
     : '<span class="rd-badge bad">✗ 缺藥</span>';
-  if(btn) btn.textContent="再抽一次";
 }
 
 /* =================== 學生版頁面 =================== */
